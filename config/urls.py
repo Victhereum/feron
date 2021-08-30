@@ -16,6 +16,8 @@ urlpatterns = [
     path("users/", include("feron.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path('driver/', include('driver.url'), ),
+    path('investor/', include('investor.url'), ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

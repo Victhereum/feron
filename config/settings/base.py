@@ -1,7 +1,9 @@
 """
 Base settings to build other settings files upon.
 """
+import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 import environ
 
@@ -23,7 +25,7 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # though not all of them may be available with every OS.
 # In Windows, this must be set to your system time zone.
-TIME_ZONE = "GMT +1"
+TIME_ZONE = "UTC"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en-us"
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
@@ -41,9 +43,30 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {
-    "default": env.db("DATABASE_URL", default="postgres:///feron"),
-}
+if os.getenv("DATABASE_URL", "") != "":
+    r = urlparse(os.environ.get("DATABASE_URL"))
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.path.relpath(r.path, "/"),
+            'USER': r.username,
+            'HOST': r.hostname,
+            'PASSWORD': r.password,
+            'PORT': r.port,
+            'OPTIONS': {'sslmode': 'require'},
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': 'Highlyicui4cu',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+        }
+    }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # URLS
@@ -71,10 +94,14 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "phonenumber_field",
 ]
 
 LOCAL_APPS = [
     "feron.users.apps.UsersConfig",
+    "driver",
+    "investor",
+    "vehicle"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
