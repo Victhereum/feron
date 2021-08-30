@@ -9,9 +9,9 @@ from urllib.parse import urlparse
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-SECRET_KEY = env("DJANGO_SECRET_KEY", get_random_secret_key())
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["feronauto.com"])
+ALLOWED_HOSTS = ["*", "feronauto.com"]
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 # DATABASES
