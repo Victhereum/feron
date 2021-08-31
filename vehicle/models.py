@@ -33,12 +33,12 @@ PAYMENT_STATUS = (
     ('payed', 'Payed'),
     ('due', 'Due'),
     ('not payed', 'Not Payed'),
-    ('completed', 'Completed'),   
+    ('completed', 'Completed'),
 )
 
 class VehicleType(models.Model):
     type = models.CharField(max_length=150, blank=False, choices=VEHICLE_CHOICES, default=VEHICLE_CHOICES[0][0])
-    
+
     def __str__(self):
         return self.type
 
@@ -56,6 +56,7 @@ class VehicleInfo(models.Model):
     engine_no = models.PositiveBigIntegerField(blank=False, unique=True)
     plate_no = models.CharField(max_length=10, unique=True)
     tracker_imei_no = models.IntegerField(blank=False, unique=True)
+    # TODO: get the neccesary detail for the vehicle papers and correct before launching
     vehicle_papers = models.ImageField(upload_to='vehicle_papers')
     inspection = models.CharField(max_length=25, blank=False, choices=INSPECTION_CHOICES, default=INSPECTION_CHOICES[0][0])
     inspection_description = models.TextField(max_length=500, blank=False)
@@ -68,7 +69,7 @@ class VehicleInfo(models.Model):
     left_to_pay = models.IntegerField()
     tenure_duration = models.DurationField(blank=False)
     hired_date = models.DateField(blank=False)
-    
+
     def __str__(self):
         return self.vin
 
@@ -81,7 +82,7 @@ class DriverVehicle(models.Model):
     vehicle = models.ForeignKey(VehicleInfo, on_delete=models.PROTECT, related_name='DriverAssignedVehicle')
 
     def __str__(self):
-        return self.driver.email
+        return self.driver.user.email
 
     class Meta:
         unique_together = ('driver', 'vehicle')
@@ -92,7 +93,7 @@ class InvestorVehicle(models.Model):
     vehicle = models.ForeignKey(VehicleInfo, on_delete=models.PROTECT, related_name='VehiclesInvested')
 
     def __str__(self):
-        return self.investor.email
+        return self.investor.user.email
     class Meta:
         unique_together = ('investor', 'vehicle')
 
@@ -105,12 +106,12 @@ class Accounting(models.Model):
 
 
     def __str__(self):
-        return self.driver.username
+        return self.status
 
     class Meta:
         ordering = ['date']
 
 
-    
+
 
 
