@@ -12,8 +12,8 @@ from urllib.parse import urlparse
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["*", "feronauto.com"]
-DEBUG = os.getenv("DEBUG", "True") == "False"
-
+# DEBUG = os.getenv("DEBUG", "True") == "False"
+DEBUG = True
 # DATABASES
 # ------------------------------------------------------------------------------
 if os.getenv("DATABASE_URL", "") != "":
