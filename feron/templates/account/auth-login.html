@@ -25,11 +25,12 @@
                         <h3>Sign In</h3>
                         <p>Please sign in to continue to RiderBase.</p>
                     </div>
-                    <form action="index.html">
+                    <form action="{% url 'login' %}" method="post">
+                        {% csrf_token %}
                         <div class="form-group position-relative has-icon-left">
                             <label for="username">Username</label>
                             <div class="position-relative">
-                                <input type="text" class="form-control" id="username">
+                                {{ form.username }}
                                 <div class="form-control-icon">
                                     <i data-feather="user"></i>
                                 </div>
@@ -43,7 +44,7 @@
                                 </a>
                             </div>
                             <div class="position-relative">
-                                <input type="text" class="form-control" id="password">
+                                {{ form.password }}
                                 <div class="form-control-icon">
                                     <i data-feather="lock"></i>
                                 </div>

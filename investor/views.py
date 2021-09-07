@@ -159,13 +159,13 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect("/customers/profile/")
+                return redirect("inv-dashboard")
             else:
                 msg = 'Invalid credentials'
         else:
             msg = 'Error validating the form'
 
-    return render(request, "investor/", {"form": form, "msg": msg})
+    return render(request, "account/auth-login.html", {"form": form, "msg": msg})
 
 
 def investor_signup_view(request):
@@ -183,7 +183,7 @@ def investor_signup_view(request):
             msg = 'User created - please <a href="/login">login</a>.'
             success = True
 
-            # return redirect("/login/")
+            return redirect("/login/")
 
         else:
             msg = 'Form is not valid'
@@ -191,3 +191,6 @@ def investor_signup_view(request):
         form = SignUpForm()
 
     return render(request, "investor/inv-auth-register.html", {"form": form, "msg": msg, "success": success})
+
+def inv_dashboard(request):
+    return render(request, 'investor/investor_dashboard.html', {})

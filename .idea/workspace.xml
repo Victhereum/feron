@@ -2,38 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/feron/templates/account/auth-login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/driver/complaint.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/driver/dri-accounting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/driver/dri-dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/driver/driver-auth-register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/investor/complaint.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/investor/inv-auth-register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/investor/inv_accounting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/investor/investor_dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/investor/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feron/templates/investor/dasboard-partial.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/templates/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/pages/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/migrations/0002_auto_20210830_1954.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/account/auth-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/account/auth-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/investor/inv-auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/investor/inv-auth-register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/investor/investor_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/investor/investor_dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feron/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investor/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/investor/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/investor/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/investor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investor/url.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/url.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle/migrations/__init__.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

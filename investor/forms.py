@@ -100,21 +100,18 @@ class ExtraFields(forms.Form):
     acc_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                "placeholder" : "Username",
                 "class": "form-control"
             }
         ))
     acc_no = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                "placeholder" : "Username",
                 "class": "form-control"
             }
         ))
     bank_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                "placeholder" : "Username",
                 "class": "form-control"
             }
         ))
