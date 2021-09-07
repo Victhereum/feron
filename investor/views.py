@@ -193,4 +193,4 @@ def investor_signup_view(request):
     return render(request, "investor/inv-auth-register.html", {"form": form, "msg": msg, "success": success})
 
 def inv_dashboard(request):
-    return render(request, 'investor/investor_dashboard.html', {})
+    return render(request, 'investor/dashboard-partial.html', {})

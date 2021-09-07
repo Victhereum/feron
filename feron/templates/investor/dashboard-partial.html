@@ -1,5 +1,6 @@
 <!doctype html>
-<html>
+{% load static %}
+<html lang="en">
 
 <head>
     <meta charset='utf-8'>
@@ -23,7 +24,7 @@
         :root {
             --header-height: 3rem;
             --nav-width: 68px;
-            --first-color: blue;
+            --first-color: #3B58E2;
             --first-color-light: #AFA5D9;
             --white-color: #F7F6FB;
             --body-font: 'Nunito', sans-serif;
@@ -115,7 +116,7 @@
             padding-top: 14px;
             padding-left: 7px;
             }
-        
+
         .l-navbar {
             position: fixed;
             top: 0;
@@ -247,7 +248,7 @@
                 <i class="fa fa-bell fa-stack-1x fa-inverse" style="color: rgba(43, 70, 139, 0.66);
 "></i>
                 </span>
-                <img class="header_img" src=" {% static './images/me.jpg' %} " alt=""> 
+                <img class="header_img" src=" {% static './images/me.jpg' %} " alt="">
                 <p class="username">Victor Isaac</p>
             </div>
         </header>
@@ -263,9 +264,9 @@
                             class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span
                                 class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i
                                 class='bx bx-cog nav_icon'></i> <span class="nav_name">Settings</span> </a> <a
-                            href="#" class="nav_link"> 
+                            href="#" class="nav_link"> </a>
                     </div>
-                </div> <a href=" {% static 'index.html' %} " class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+                </div> <a href=" {% url 'account_logout' %} " class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
                         class="nav_name">SignOut</span> </a>
             </nav>
         </div>
@@ -282,7 +283,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="col">
             <div class="card bg-c-green order-card">
                 <div class="card-block">
@@ -305,7 +306,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="col">
             <div class="card bg-c-pink order-card">
                 <div class="card-block">
