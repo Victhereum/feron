@@ -78,8 +78,8 @@ class VehicleInfo(models.Model):
 
 
 class DriverVehicle(models.Model):
-    driver = models.ForeignKey(Driver, on_delete=models.PROTECT, related_name='Driver')
-    vehicle = models.ForeignKey(VehicleInfo, on_delete=models.PROTECT, related_name='DriverAssignedVehicle')
+    driver = models.ForeignKey(Driver, on_delete=models.CASCADE, related_name='Driver')
+    vehicle = models.ForeignKey(VehicleInfo, on_delete=models.CASCADE, related_name='DriverAssignedVehicle')
 
     def __str__(self):
         return self.driver.user.email
@@ -89,8 +89,8 @@ class DriverVehicle(models.Model):
 
 
 class InvestorVehicle(models.Model):
-    investor = models.ForeignKey(Investor, on_delete=models.PROTECT, related_name='Investor')
-    vehicle = models.ForeignKey(VehicleInfo, on_delete=models.PROTECT, related_name='VehiclesInvested')
+    investor = models.ForeignKey(Investor, on_delete=models.CASCADE, related_name='Investor')
+    vehicle = models.ForeignKey(VehicleInfo, on_delete=models.CASCADE, related_name='VehiclesInvested')
 
     def __str__(self):
         return self.investor.user.email
@@ -99,8 +99,8 @@ class InvestorVehicle(models.Model):
 
 
 class Accounting(models.Model):
-    driver = models.ForeignKey(DriverVehicle, on_delete=models.PROTECT, related_name='driver_accounting', blank=False)
-    investor = models.ForeignKey(InvestorVehicle, on_delete=models.PROTECT, related_name='investor_accounting', blank=False)
+    driver = models.ForeignKey(DriverVehicle, on_delete=models.CASCADE, related_name='driver_accounting', blank=False)
+    investor = models.ForeignKey(InvestorVehicle, on_delete=models.CASCADE, related_name='investor_accounting', blank=False)
     date = models.DateField(unique=True)
     status = models.CharField(choices=PAYMENT_STATUS,  max_length=20)
 

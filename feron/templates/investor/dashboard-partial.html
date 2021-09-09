@@ -249,7 +249,7 @@
 "></i>
                 </span>
                 <img class="header_img" src=" {% static './images/me.jpg' %} " alt="">
-                <p class="username">Victor Isaac</p>
+                <p class="username">{{username}}</p>
             </div>
         </header>
 
@@ -257,12 +257,12 @@
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
                 <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
-                            class="nav_logo-name">RIDERBASE</span> </a>
+                            class="nav_logo-name">Feron</span> </a>
                     <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
                             <span class="nav_name">Dashboard</span> </a> <a href="#" class="nav_link"> <i
                                 class='bx bx-money nav_icon'></i> <span class="nav_name">Users</span> </a> <a href="#"
                             class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span
-                                class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i
+                                class="nav_name">Feedback</span> </a> <a href="#" class="nav_link"> <i
                                 class='bx bx-cog nav_icon'></i> <span class="nav_name">Settings</span> </a> <a
                             href="#" class="nav_link"> </a>
                     </div>
@@ -278,7 +278,7 @@
             <div class="card bg-c-blue order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Total Vehicles</h6>
-                    <h2 class="text-right"><i class="fa fa-car f-left"></i><span>4</span></h2>
+                    <h2 class="text-right"><i class="fa fa-car f-left"></i><span>{{ total_vehicles.count }}</span></h2>
                     <p class="m-b-0">Completed Tenures<span class="f-right">2</span></p>
                 </div>
             </div>
@@ -307,15 +307,15 @@
             </div>
         </div>
 
-        <div class="col">
-            <div class="card bg-c-pink order-card">
-                <div class="card-block">
-                    <h6 class="m-b-20">ID</h6>
-                    <h2 class="text-right"><i class="fa fa-user f-left"></i><span>VIC123</span></h2>
-                    <br>
-                </div>
-            </div>
-        </div>
+{#        <div class="col">#}
+{#            <div class="card bg-c-pink order-card">#}
+{#                <div class="card-block">#}
+{#                    <h6 class="m-b-20">ID</h6>#}
+{#                    <h2 class="text-right"><i class="fa fa-user f-left"></i><span>{{ username }}</span></h2>#}
+{#                    <br>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
 	</div>
 </div>
 <!-- End of Cards -->

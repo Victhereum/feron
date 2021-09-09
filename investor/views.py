@@ -132,6 +132,7 @@
 #         return redirect('index')
 
 # TODO: If this works, then use it through out and delete the others
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 # Create your views here.
@@ -139,6 +140,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.forms.utils import ErrorList
 from django.http import HttpResponse
+
+from investor import models
 from .forms import LoginForm, SignUpForm
 from django.contrib.auth import get_user_model
 
@@ -157,9 +160,10 @@ def login_view(request):
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect("inv-dashboard")
+            if user:
+                if user.is_active and user.is_authenticated:
+                    login(request, user)
+                    return redirect("inv-dashboard")
             else:
                 msg = 'Invalid credentials'
         else:
@@ -175,10 +179,12 @@ def investor_signup_view(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
+            investor = form.save()
+            investor.is_investor = True
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
+
 
             msg = 'User created - please <a href="/login">login</a>.'
             success = True
@@ -192,5 +198,8 @@ def investor_signup_view(request):
 
     return render(request, "investor/inv-auth-register.html", {"form": form, "msg": msg, "success": success})
 
-def inv_dashboard(request):
-    return render(request, 'investor/dashboard-partial.html', {})
+
+# @login_required(login_url='login')
+# def inv_dashboard(request):
+#     username = models.Investor.objects.get(user_id=request.user.id)
+#     return render(request, 'investor/dashboard-partial.html', {'username': username,})

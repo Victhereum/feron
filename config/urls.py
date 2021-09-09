@@ -23,7 +23,8 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     path('driver/', include('driver.url'), ),
     path('investor/', include('investor.url'), ),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('dashborad/', include('vehicle.url'), ),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 if settings.DEBUG:
