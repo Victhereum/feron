@@ -270,8 +270,16 @@ tags
 
 ### Project template
 
-feron/media/
+feron/media/*
 
 .pytest_cache/
 
+# sqlite3 stuff
+*.db
+db.sqlite3
+
+local.py
+db.sqlite3-journal
+.idea
+.idea/*
 
