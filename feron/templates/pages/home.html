@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Your description">
     <meta name="author" content="Your name">
@@ -21,25 +21,25 @@
 
     <!-- Webpage Title -->
     <title>Feron</title>
-    
+
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href=" {% static 'css/bootstrap.min.css' %} " rel="stylesheet">
     <link href=" {% static 'css/fontawesome-all.min.css' %} " rel="stylesheet">
     <link href=" {% static 'css/swiper.css' %} " rel="stylesheet">
 	<link href=" {% static 'css/styles.css' %} " rel="stylesheet">
-	
+
 	<!-- Favicon  -->
     <link rel="icon" href=" {% static 'images/favicon.png' %} ">
 </head>
 <body>
-    
+
     <!-- Navigation -->
     <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light pb-1" aria-label="Main navigation">
         <div class="container">
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href=" {% static 'index.html' %} "><img src=" {% static 'images/riderbase-logo.svg' %} " alt="alternative"></a> 
+            <a class="navbar-brand logo-image" href=" {% static 'index.html' %} "><img src=" {% static 'images/riderbase-logo.svg' %} " alt="alternative"></a>
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
             <!-- <a class="navbar-brand logo-text" href=" {% static 'index.html' %} ">Nubis</a> -->
@@ -74,14 +74,35 @@
                     </li> -->
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-solid-sm" href=" {% url 'driver:dri-signup' %} ">Join Us</a>
+                    <a class="btn-solid-sm" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Join Us</a>
                 </span>
+                <div class="offcanvas offcanvas-top text-center" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Join Us</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <div>
+                      Please Select Your SignUp Option
+                    </div>
+                    <div class="dropdown mt-3">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                        Select Option
+                      </button>
+                      <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href=" {% url 'driver:dri-signup' %} ">Driver</a></li>
+                        <li><a class="dropdown-item" href="{% url 'inv-signup' %}">Investor</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
             </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
 
-      
+
     <!-- Header -->
     <header id="header" class="header" >
         <div class="container">
@@ -99,7 +120,7 @@
                             <li>You can check on your investment on any device, iOS, Android or PC</li>
                             <li>Over 60% ROI in 2 years</li>
                         </ul>
-                        <a class="btn-solid-lg" href=" {% url 'driver:dri-signup' %} ">Sign Up</a>
+                        <a class="btn-solid-lg" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Join Us</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6 col-xl-7">
@@ -124,7 +145,7 @@
             </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-12">
-                    
+
                     <!-- Card -->
                     <div class="card">
                         <div class="card-icon">
@@ -174,7 +195,7 @@
             </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-12">
-                    
+
                     <!-- Card -->
                     <div class="card">
                         <div class="card-icon">
@@ -274,11 +295,11 @@
                     <h2 class="h2-heading">Our Dashboard Features</h2>
                     <p class="p-heading">Our Dashboard Is Simple to Use &amp; Understand </p>
                 </div> <!-- end of col -->
-            </div> <!-- end of row -->   
+            </div> <!-- end of row -->
             <div class="row">
                 <div class="col-xl-5">
                     <div class="accordion" id="accordionExample">
-                        
+
                         <!-- Accordion Table Test -->
                         <div class="accordion-item">
                             <div class="accordion-icon">
@@ -294,7 +315,7 @@
                             </div> <!-- end of accordion-collapse -->
                         </div> <!-- end of accordion-item -->
                         <!-- end of accordion-item -->
-                        
+
                         <!-- Accordion Item -->
                         <div class="accordion-item">
                             <div class="accordion-icon">
@@ -342,7 +363,7 @@
                             </div> <!-- end of accordion-collapse -->
                         </div> <!-- end of accordion-item -->
                         <!-- end of accordion-item -->
-                        
+
                         <!-- Accordion Item -->
                         <div class="accordion-item">
                             <div class="accordion-icon orange">
@@ -418,7 +439,7 @@
                         <div class="gradient-floor purple-to-green"></div>
                     </div>
                     <!-- end of card -->
-                    
+
                     <!-- Card -->
                     <div class="card">
                         <img class="quotes" src=" {% static 'images/quotes.svg' %} " alt="alternative">
@@ -614,7 +635,7 @@
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </div> <!-- end of footer -->  
+    </div> <!-- end of footer -->
     <!-- end of footer -->
 
 
@@ -636,16 +657,16 @@
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->
-    </div> <!-- end of copyright --> 
+    </div> <!-- end of copyright -->
     <!-- end of copyright -->
-    
+
 
     <!-- Back To Top Button -->
     <button onclick="topFunction()" id="myBtn">
         <img src=" {% static 'images/up-arrow.png' %} " alt="alternative">
     </button>
     <!-- end of back to top button -->
-    	
+
     <!-- Scripts -->
     <script src=" {% static 'js/bootstrap.min.js' %} "></script> <!-- Bootstrap framework -->
     <script src=" {% static 'js/swiper.min.js' %} "></script> <!-- Swiper for image and text sliders -->

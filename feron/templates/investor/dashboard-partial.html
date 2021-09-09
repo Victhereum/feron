@@ -1,0 +1,426 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Snippet - BBBootstrap</title>
+    <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'> -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+    <link href=" {% static 'css/fontawesome-all.min.css' %} " rel="stylesheet">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href=" {% static './css/dashboard/style.css' %} " />
+    <link rel="stylesheet" href=" {% static './css/bootstrap.min.css' %} " />
+    <link rel="stylesheet" href=" {% static './css/styles.css' %} " />
+    <!-- Pie Progress Assests -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <!-- End PPA -->
+    <script type='text/javascript' src=' {% static '' %} '></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+        :root {
+            --header-height: 3rem;
+            --nav-width: 68px;
+            --first-color: #3B58E2;
+            --first-color-light: #AFA5D9;
+            --white-color: #F7F6FB;
+            --body-font: 'Nunito', sans-serif;
+            --normal-font-size: 1rem;
+            --z-fixed: 100
+        }
+
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box
+        }
+
+        body {
+            position: relative;
+            margin: var(--header-height) 0 0 0;
+            padding: 0 1rem;
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            transition: .5s
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .header {
+            width: 100%;
+            height: var(--header-height);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            background-color: var(--white-color);
+            z-index: var(--z-fixed);
+            transition: .5s
+        }
+
+        .header_toggle {
+            color: var(--first-color);
+            font-size: 1.5rem;
+            cursor: pointer
+        }
+
+        .fa-stack[data-count]:after{
+        position:relative;
+        right:0%;
+        top:1%;
+        content: attr(data-count);
+        font-size:30%;
+        padding:.6em;
+        border-radius:999px;
+        line-height:.75em;
+        color: white;
+        background:rgba(255,0,0,.85);
+        text-align:center;
+        min-width:2em;
+        font-weight:bold;
+        padding-right: 7px;
+        }
+
+        .header_img {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden
+        }
+
+        .header_img img {
+            width: 40px
+        }
+
+        #navbar_right{
+            align-items: center;
+            justify-items: center;
+            justify-content: space-between;
+        }
+
+        .username{
+            position: relative;
+            text-justify: auto;
+            font-weight: bolder;
+            font-size: large;
+            padding-top: 14px;
+            padding-left: 7px;
+            }
+
+        .l-navbar {
+            position: fixed;
+            top: 0;
+            left: -30%;
+            width: var(--nav-width);
+            height: 100vh;
+            background-color: var(--first-color);
+            padding: .5rem 1rem 0 0;
+            transition: .5s;
+            z-index: var(--z-fixed)
+        }
+
+        .nav {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden
+        }
+
+        .nav_logo,
+        .nav_link {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            align-items: center;
+            column-gap: 1rem;
+            padding: .5rem 0 .5rem 1.5rem
+        }
+
+        .nav_logo {
+            margin-bottom: 2rem
+        }
+
+        .nav_logo-icon {
+            font-size: 1.25rem;
+            color: var(--white-color)
+        }
+
+        .nav_logo-name {
+            color: var(--white-color);
+            font-weight: 700
+        }
+
+        .nav_link {
+            position: relative;
+            color: var(--first-color-light);
+            margin-bottom: 1.5rem;
+            transition: .3s
+        }
+
+        .nav_link:hover {
+            color: var(--white-color)
+        }
+
+        .nav_icon {
+            font-size: 1.25rem
+        }
+
+        .show {
+            left: 0
+        }
+
+        .body-pd {
+            padding-left: calc(var(--nav-width) + 1rem)
+        }
+
+        .active {
+            color: var(--white-color)
+        }
+
+        .active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 2px;
+            height: 32px;
+            background-color: var(--white-color)
+        }
+
+        .height-100 {
+            height: 100vh
+        }
+
+        @media screen and (min-width: 768px) {
+            body {
+                margin: calc(var(--header-height) + 1rem) 0 0 0;
+                padding-left: calc(var(--nav-width) + 2rem)
+            }
+
+            .header {
+                height: calc(var(--header-height) + 1rem);
+                padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+            }
+
+            .header_img {
+                width: 30px;
+                height: 30px
+            }
+
+            .header_img img {
+                width: 45px
+            }
+
+
+            .l-navbar {
+                left: 0;
+                padding: 1rem 1rem 0 0
+            }
+
+            .show {
+                width: calc(var(--nav-width) + 156px)
+            }
+
+            .body-pd {
+                padding-left: calc(var(--nav-width) + 188px)
+            }
+        }
+    </style>
+</head>
+
+<body oncontextmenu='return false' class='snippet-body'>
+
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+            <div class="navbar" id="navbar_right">
+                <span class="fa-stack fa-0.7x" data-count="28">
+                <i class="fa fa-circle fa-stack-2x" style="color: rgba(196, 196, 196, 0.53)" ></i>
+                <i class="fa fa-bell fa-stack-1x fa-inverse" style="color: rgba(43, 70, 139, 0.66);
+"></i>
+                </span>
+                <img class="header_img" src=" {% static './images/me.jpg' %} " alt="">
+                <p class="username">{{username}}</p>
+            </div>
+        </header>
+
+
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
+                            class="nav_logo-name">Feron</span> </a>
+                    <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
+                            <span class="nav_name">Dashboard</span> </a> <a href="#" class="nav_link"> <i
+                                class='bx bx-money nav_icon'></i> <span class="nav_name">Users</span> </a> <a href="#"
+                            class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span
+                                class="nav_name">Feedback</span> </a> <a href="#" class="nav_link"> <i
+                                class='bx bx-cog nav_icon'></i> <span class="nav_name">Settings</span> </a> <a
+                            href="#" class="nav_link"> </a>
+                    </div>
+                </div> <a href=" {% url 'account_logout' %} " class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+                        class="nav_name">SignOut</span> </a>
+            </nav>
+        </div>
+        <!--Container Main start-->
+        <div class="height-100 bg-light">
+            <div class="container align-items-start">
+    <div class="row">
+        <div class="col">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Total Vehicles</h6>
+                    <h2 class="text-right"><i class="fa fa-car f-left"></i><span>{{ total_vehicles.count }}</span></h2>
+                    <p class="m-b-0">Completed Tenures<span class="f-right">2</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Projected Earning</h6>
+                    <h2 class="text-right"><i class="fa fa-money f-left"></i><span>N6,240,000</span></h2>
+                    <p class="m-b-0">Current Earning<span class="f-right">N1,560,000</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container align-items-start">
+    <div class="row">
+        <div class="col">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Total Weeks</h6>
+                    <h2 class="text-right"><i class="fa fa-calendar f-left"></i><span>104</span></h2>
+                    <p class="m-b-0">Completed Weeks<span class="f-right">49</span></p>
+                </div>
+            </div>
+        </div>
+
+{#        <div class="col">#}
+{#            <div class="card bg-c-pink order-card">#}
+{#                <div class="card-block">#}
+{#                    <h6 class="m-b-20">ID</h6>#}
+{#                    <h2 class="text-right"><i class="fa fa-user f-left"></i><span>{{ username }}</span></h2>#}
+{#                    <br>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+	</div>
+</div>
+<!-- End of Cards -->
+<!-- Table Accordion -->
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Vehicle Name</th>
+      <th scope="col">Started</th>
+      <th scope="col">Ending</th>
+      <th scope="col">Initial State</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Toyota Camry</td>
+      <td>1 June 2020</td>
+      <td>1 June 2022</td>
+      <td>New</td>
+      <td class="badge bg-success">Active</td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="container collape" id="collapseExample">
+  <div class="row align-items-start">
+    <div class="col">
+<div class="progress-pie-chart" data-percent="22">
+  <div class="ppc-progress">
+    <div class="ppc-progress-fill"></div>
+  </div>
+  <div class="ppc-percents">
+    <div class="pcc-percents-wrapper">
+      <span>%</span>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col text-center">
+      <p><b>Earning</b></p>
+      <hr>
+      <p>N160,000</p>
+      <hr>
+      <p>N160,000,000</p>
+    </div>
+    <div class="col text-center">
+      <p><b>Status</b></p>
+      <hr>
+      <p class="badge bg-success">Active</p>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+</body>
+        <!--Container Main end-->
+            <script src=" {% static 'js/bootstrap.min.js' %} "></script> <!-- Bootstrap framework -->
+    <script src=" {% static 'js/swiper.min.js' %} "></script> <!-- Swiper for image and text sliders -->
+    <script src=" {% static 'js/scripts.js' %} "></script> <!-- Custom scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src=" {% static './js/dashboard/script.js' %} "></script> <!-- Custom scripts -->
+        <!-- <script type='text/javascript'src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script> -->
+        <script type='text/javascript'>document.addEventListener("DOMContentLoaded", function (event) {
+
+                const showNavbar = (toggleId, navId, bodyId, headerId) => {
+                    const toggle = document.getElementById(toggleId),
+                        nav = document.getElementById(navId),
+                        bodypd = document.getElementById(bodyId),
+                        headerpd = document.getElementById(headerId)
+
+                    // Validate that all variables exist
+                    if (toggle && nav && bodypd && headerpd) {
+                        toggle.addEventListener('click', () => {
+                            // show navbar
+                            nav.classList.toggle('show')
+                            // change icon
+                            toggle.classList.toggle('bx-x')
+                            // add padding to body
+                            bodypd.classList.toggle('body-pd')
+                            // add padding to header
+                            headerpd.classList.toggle('body-pd')
+                        })
+                    }
+                }
+
+                showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+
+                /*===== LINK ACTIVE =====*/
+                const linkColor = document.querySelectorAll('.nav_link')
+
+                function colorLink() {
+                    if (linkColor) {
+                        linkColor.forEach(l => l.classList.remove('active'))
+                        this.classList.add('active')
+                    }
+                }
+                linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+                // Your code to run since DOM is loaded and ready
+            });</script>
+    </body>
+
+</html>

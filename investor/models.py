@@ -1,4 +1,6 @@
 from django.contrib.auth.models import AbstractUser
+from django.db.models.signals import post_save
+from django.dispatch.dispatcher import receiver
 from phonenumber_field.modelfields import PhoneNumberField
 from django.db import models
 from feron.users.models import User
@@ -12,7 +14,7 @@ class Investor(models.Model):
     phone_no = models.CharField(max_length=15, unique=True)
     country = models.CharField(max_length=30, blank=False)
     state = models.CharField(max_length=30, blank=False)
-    # address = models.CharField(blank=False)
+    address = models.CharField(max_length=80, blank=False)
     date_joined = models.DateTimeField(auto_now_add=True)
     # Bank Account Info
     acc_name = models.CharField(max_length=50, blank=False)
