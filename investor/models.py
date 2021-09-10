@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
 from django.dispatch.dispatcher import receiver
-from phonenumber_field.modelfields import PhoneNumberField
+# from phonenumber_field.modelfields import PhoneNumberField
 from django.db import models
 from feron.users.models import User
 

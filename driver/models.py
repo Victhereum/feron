@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.enums import Choices
 from django.urls import reverse
-from phonenumber_field.modelfields import PhoneNumberField
+# from phonenumber_field.modelfields import PhoneNumberField
 from feron.users.models import User
 
 WEEK_CHOICES = (
