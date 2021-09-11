@@ -142,34 +142,14 @@ from django.forms.utils import ErrorList
 from django.http import HttpResponse
 
 from investor import models
-from .forms import LoginForm, SignUpForm
+from .forms import SignUpForm
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
 
 
-def login_view(request):
-    form = LoginForm(request.POST or None)
 
-    msg = None
-
-    if request.method == "POST":
-
-        if form.is_valid():
-            username = form.cleaned_data.get("username")
-            password = form.cleaned_data.get("password")
-            user = authenticate(username=username, password=password)
-            if user:
-                if user.is_active and user.is_authenticated:
-                    login(request, user)
-                    return redirect("inv-dashboard")
-            else:
-                msg = 'Invalid credentials'
-        else:
-            msg = 'Error validating the form'
-
-    return render(request, "account/auth-login.html", {"form": form, "msg": msg})
 
 
 def investor_signup_view(request):
@@ -189,7 +169,7 @@ def investor_signup_view(request):
             msg = 'User created - please <a href="/login">login</a>.'
             success = True
 
-            return redirect("/login/")
+            return redirect("login")
 
         else:
             msg = 'Form is not valid'

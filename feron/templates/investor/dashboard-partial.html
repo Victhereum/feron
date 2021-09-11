@@ -276,11 +276,9 @@
     <div class="row">
         <div class="col">
             <div class="card bg-c-blue order-card">
-                {% for vehicles in inv_vehivcle %}
                 <div class="card-block">
                     <h6 class="m-b-20">Total Vehicles</h6>
-                    <h2 class="text-right"><i class="fa fa-car f-left"></i><span>{{ vehicles.count }}</span></h2>
-                    {% endfor %}
+                    <h2 class="text-right"><i class="fa fa-car f-left"></i><span> {{ inv_vehicles.count }} </span></h2>
                     <p class="m-b-0">Completed Tenures<span class="f-right">2</span></p>
                 </div>
             </div>
@@ -290,7 +288,7 @@
             <div class="card bg-c-green order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Projected Earning</h6>
-                    <h2 class="text-right"><i class="fa fa-money f-left"></i><span>N6,240,000</span></h2>
+                      <h2 class="text-right"><i class="fa fa-money f-left"></i><span> {{ vehicle }} </span></h2>
                     <p class="m-b-0">Current Earning<span class="f-right">N1,560,000</span></p>
                 </div>
             </div>
