@@ -20,6 +20,7 @@ FLAG_CHOICES = (
 )
 
 HIRE_STATUS = (
+    ('reviewing', 'Reviewing'),
     ('not hired', 'Not Hired'),
     ('Hired', 'Hired'),
     ('completed', 'Completed'),

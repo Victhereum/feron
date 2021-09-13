@@ -1,0 +1,117 @@
+{% extends 'investor/dashboard-partial.html' %}
+{% load static %}
+{% block content %}
+<div class="height-100 bg-light">
+            <div class="container align-items-start">
+    <div class="row">
+        <div class="col">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Total Vehicles</h6>
+                    <h2 class="text-right"><i class="fa fa-car f-left"></i><span> {{ inv_vehicles.count }} </span></h2>
+                    <p class="m-b-0">Completed Tenures<span class="f-right"></span></p>
+                </div>
+            </div>
+        </div>
+
+{#        <div class="col">#}
+{#            <div class="card bg-c-green order-card">#}
+{#                <div class="card-block">#}
+{#                    {% set amount = 0 %}#}
+{#                    {{ amount = vehicle.vehicle__interest_amount }}#}
+{#                    <h6 class="m-b-20">Projected Earning</h6>#}
+{#                      <h2 class="text-right"><i class="fa fa-money f-left"></i>{{ proj_amount.amount }}<span></span></h2>#}
+{#                    <p class="m-b-0">Current Earning<span class="f-right">N1,560,000</span></p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+    </div>
+
+    <div class="container align-items-start">
+    <div class="row">
+        <div class="col">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Total Weeks</h6>
+                    <h2 class="text-right"><i class="fa fa-calendar f-left"></i><span> 104</span></h2>
+                    {% for i in info %}
+                    {% if i.2 == 'completed' %}
+                    <p class="m-b-0">Completed Weeks<span class="f-right">{{ forloop.counter }}</span></p>
+                    {% endif %}
+                    {% endfor %}
+                    <p class="m-b-0">Completed Weeks<span class="f-right">0</span></p>
+
+                </div>
+            </div>
+        </div>
+
+{#        <div class="col">#}
+{#            <div class="card bg-c-pink order-card">#}
+{#                <div class="card-block">#}
+{#                    <h6 class="m-b-20">ID</h6>#}
+{#                    <h2 class="text-right"><i class="fa fa-user f-left"></i><span>{{ username }}</span></h2>#}
+{#                    <br>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+	</div>
+</div>
+<!-- End of Cards -->
+<!-- Table Accordion -->
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Vehicle Name</th>
+      <th scope="col">Started</th>
+      <th scope="col">Ending</th>
+      <th scope="col">Initial State</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for vehicle in info %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">{{ vehicle.vehicle__make }} {{ vehicle.vehicle__plate_no }}</td>
+      <td>{{ vehicle.vehicle__hired_date }}</td>
+      <td>1 June 2022</td>
+      <td>New</td>
+      <td class="badge bg-success">{{ vehicle.vehicle__status }}</td>
+    </tr>
+  {% endfor %}
+    </tbody>
+  </table>
+{#  <div class="container collape" id="collapseExample">#}
+{#  <div class="row align-items-start">#}
+{#    <div class="col">#}
+{#<div class="progress-pie-chart" data-percent="22">#}
+{#  <div class="ppc-progress">#}
+{#    <div class="ppc-progress-fill"></div>#}
+{#  </div>#}
+{#  <div class="ppc-percents">#}
+{#    <div class="pcc-percents-wrapper">#}
+{#      <span>%</span>#}
+{#    </div>#}
+{#  </div>#}
+{#</div>#}
+{#    </div>#}
+{#    <div class="col text-center">#}
+{#      <p><b>Earning</b></p>#}
+{#      <hr>#}
+{#      <p>N160,000</p>#}
+{#      <hr>#}
+{#      <p>N160,000,000</p>#}
+{#    </div>#}
+{#    <div class="col text-center">#}
+{#      <p><b>Status</b></p>#}
+{#      <hr>#}
+{#      <p class="badge bg-success">Active</p>#}
+{#    </div>#}
+{#  </div>#}
+
+</div>
+</div>
+</div>
+{% endblock %}

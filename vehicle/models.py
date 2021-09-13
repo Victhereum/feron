@@ -1,6 +1,7 @@
 from django.db import models
 from investor.models import Investor
 from driver.models import Driver
+from datetime import datetime
 
 COLORS_CHOICE = (
     ('red', 'Red'),
@@ -47,7 +48,6 @@ class VehicleType(models.Model):
 
 class VehicleInfo(models.Model):
     type = models.ForeignKey(VehicleType, on_delete=models.CASCADE)
-    units = models.IntegerField(default=0, blank=False)
     make = models.CharField(max_length=20, blank=False)
     model = models.CharField(max_length=20, blank=False)
     year = models.IntegerField(blank=False)
@@ -57,7 +57,7 @@ class VehicleInfo(models.Model):
     plate_no = models.CharField(max_length=10, unique=True)
     tracker_imei_no = models.IntegerField(blank=False, unique=True)
     # TODO: get the neccesary detail for the vehicle papers and correct before launching
-    vehicle_papers = models.ImageField(upload_to='vehicle_papers')
+    vehicle_papers = models.FileField(upload_to='vehicle_papers')
     inspection = models.CharField(max_length=25, blank=False, choices=INSPECTION_CHOICES, default=INSPECTION_CHOICES[0][0])
     inspection_description = models.TextField(max_length=500, blank=False)
     value_at_acquisition = models.IntegerField()
@@ -67,11 +67,13 @@ class VehicleInfo(models.Model):
     weekly_returns = models.IntegerField()
     paid_so_far = models.IntegerField()
     left_to_pay = models.IntegerField()
-    tenure_duration = models.DurationField(blank=False)
-    hired_date = models.DateField(blank=False)
+    # tenure_duration = models.DateField(blank=True)
+    hired_date = models.DateField()
+    hire_ending = models.DateField()
+
 
     def __str__(self):
-        return self.vin
+        return self.plate_no
 
     class Meta:
         ordering = ['date_created']
@@ -93,7 +95,8 @@ class InvestorVehicle(models.Model):
     vehicle = models.ForeignKey(VehicleInfo, on_delete=models.CASCADE, related_name='VehiclesInvested')
 
     def __str__(self):
-        return self.investor.user.email
+        return f'{self.investor.acc_name} {self.vehicle.make} {self.vehicle.model}'
+
     class Meta:
         unique_together = ('investor', 'vehicle')
 
@@ -104,9 +107,8 @@ class Accounting(models.Model):
     date = models.DateField(unique=True)
     status = models.CharField(choices=PAYMENT_STATUS,  max_length=20)
 
-
     def __str__(self):
-        return self.status
+        return f'{self.driver.driver.user.get_full_name()} {self.investor.investor.user.get_full_name()} {self.status}'
 
     class Meta:
         ordering = ['date']
