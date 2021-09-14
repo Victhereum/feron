@@ -352,11 +352,12 @@ a:hover {
 .navbar .navbar-brand {
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem;
+
 }
 
 .navbar .logo-image img {
-    width: 126px;
-	height: 32px;
+    width: auto;
+	  height: 32px;
 }
 
 .navbar .logo-text {

@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/feron/static/images/feron-animated-flyer.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/investor/inv-dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/templates/investor/investor-accounting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/feron.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/feron.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webResources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feron/static/images/Feron-Logo-with-text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feron/static/images/Feron-Logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/production.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feron/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/feron/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/static/images/riderbase-about-us.svg" beforeDir="false" afterPath="$PROJECT_DIR$/feron/static/images/feron-about-us.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/templates/investor/dashboard-partial.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/investor/dashboard-partial.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/templates/investor/inv_accounting.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/investor/inv_accounting.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feron/templates/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/pages/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle/url.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/url.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +166,7 @@
       <workItem from="1631342871461" duration="9415000" />
       <workItem from="1631386427325" duration="38196000" />
       <workItem from="1631542780719" duration="1459000" />
-      <workItem from="1631545980822" duration="20264000" />
+      <workItem from="1631545980822" duration="24196000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -207,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631224551928</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Investor Section working except the feeback section">
+      <created>1631572959420</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631572959421</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +227,8 @@
     <MESSAGE value="Signup, Login and Dhashboard views are working, however not perfect2" />
     <MESSAGE value="Investor can signup, sign in and view their dashboard, but the values are yet to be displayed" />
     <MESSAGE value="added new items to .gitignore file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new items to .gitignore file" />
+    <MESSAGE value="Investor Section working except the feeback section" />
+    <option name="LAST_COMMIT_MESSAGE" value="Investor Section working except the feeback section" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/feron$views.coverage" NAME="views Coverage Results" MODIFIED="1631140989366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vehicle" />
