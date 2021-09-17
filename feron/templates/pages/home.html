@@ -88,15 +88,17 @@
                   <div class="offcanvas-body">
                     <div>
                       Please Select Your SignUp Option
-                    </div>
-                    <div class="dropdown mt-3 align-left">
-                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-                        Select Option
-                      </button>
-                      <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href=" {% url 'driver:dri-signup' %} ">Driver</a></li>
-                        <li><a class="dropdown-item" href="{% url 'inv-signup' %}">Investor</a></li>
+                    </div><br>
+                    <div class="align-items-center">
+{#                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">#}
+{#                        Select Option#}
+{#                      </button>#}
+                        <span>
+                      <ul class="ms-auto list-group list-group-horizontal" style="list-style-type: none; display: inline-flex; ">
+                        <li><a class="btn-outline-reg list-group-item" style="text-decoration: none; display: inline-flex; align-content: center; margin-right: 10px" href=" {% url 'driver:dri-signup' %} ">Driver</a></li>
+                        <li><a class="btn-outline-reg list-group-item" style="text-decoration: none; display: inline-flex;align-content: center" href="{% url 'inv-signup' %}">Investor</a></li>
                       </ul>
+                        </span>
                     </div>
                   </div>
                 </div>

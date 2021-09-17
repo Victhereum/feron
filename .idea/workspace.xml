@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver/url.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/url.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/templates/driver/driver-auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/driver/driver-auth-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/investor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/feron/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/pages/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +165,7 @@
       <workItem from="1631386427325" duration="38196000" />
       <workItem from="1631542780719" duration="1459000" />
       <workItem from="1631545980822" duration="26681000" />
-      <workItem from="1631891229862" duration="488000" />
+      <workItem from="1631891229862" duration="5143000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -212,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631578822256</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Changed the logo">
+      <created>1631892792918</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631892792918</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
