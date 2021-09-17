@@ -38,7 +38,7 @@
 
 #
 # def is_investor(user):
-#     return user.groups.filter(name='INVESTORS').exists()
+#     return Investor.user_id.exists()
 
 
 # # Create your views here.
@@ -146,11 +146,6 @@ from .forms import SignUpForm
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
-
-
-
-
-
 
 def investor_signup_view(request):
     msg = None

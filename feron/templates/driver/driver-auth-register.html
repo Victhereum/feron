@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -13,7 +14,7 @@
 
 <body>
     <div id="auth">
-        
+
 <div class="container">
     <div class="row">
         <div class="col-md-7 col-sm-12 mx-auto">
@@ -22,51 +23,82 @@
                     <div class="text-center mb-5">
                         <img src=" {% static 'images/favicon.png' %} " height="48" class='mb-4'>
                         <h3>Sign Up</h3>
-                        <p>Please fill the form to register as a driver.</p>
+                        <p>Please fill the form to register as driver </p>
                     </div>
-                    <form action="index.html">
+                    <form action="{% url 'inv-signup' %}" method="post">
+                        {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                    <label for="first-name-column">First Name</label>
-                                    <input type="text" id="first-name-column" class="form-control"  name="fname-column">
+                                    <label for="first_name">First Name</label>
+                                    {{ form.first_name }}
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                    <label for="last-name-column">Last Name</label>
-                                    <input type="text" id="last-name-column" class="form-control"  name="lname-column">
+                                    <label for="last_name">Last Name</label>
+                                    {{ form.last_name }}
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                    <label for="username-column">Username</label>
-                                    <input type="text" id="username-column" class="form-control" name="username-column">
+                                    <label for="username">Username</label>
+                                    {{ form.username }}
+                                </div>
+                            </div>
+{#                            <div class="col-md-6 col-12">#}
+{#                                <div class="form-group">#}
+{#                                    <label for="phone_no">Phone</label>#}
+{#                                    <input type="tel" id="phone_no" class="form-control" name="phone_no">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-md-6 col-12">#}
+{#                                <div class="form-group">#}
+{#                                    <label for="vehicle-type">Vehicle Type</label>#}
+{#                                    <select type="text" id="vehicle-type" class="form-control" name="vehicle_type">#}
+{#                                        <optgroup label="Choose Vehicle Type">#}
+{#                                            <option value="cab">Cab</option>#}
+{#                                            <option value="taxi">Taxi</option>#}
+{#                                            <option value="keke">Keke</option>#}
+{#                                        </optgroup>#}
+{#                                    </select>#}
+{#                                </div>#}
+{#                            </div>#}
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    {{ form.email }}
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                    <label for="email-id-column">Email</label>
-                                    <input type="email" id="email-id-column" class="form-control" name="email-id-column">
+                                    <label for="passowrd1">Password</label>
+                                    {{ form.password1 }}
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                    <label for="country-floating">Country</label>
-                                    <select type="text" id="country" class="form-control" name="country-floating">
-                                    <option>select country</option>
-                                    </select>
+                                    <label for="password2">Confirm Password</label>
+                                    {{ form.password2 }}
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12">
-                                <div class="form-group">
-                                    <label for="company-column">State</label>
-                                    <span id="state-code" class="form-control"><input type="text" class="form-control" id="state" name="state"></span>
-                                </div>
-                            </div>
-                        </diV>
+{#                            <div class="col-md-6 col-12">#}
+{#                                <div class="form-group">#}
+{#                                    <label for="country">Country</label>#}
+{#                                    <select type="text" id="country" class="form-control" name="country">#}
+{#                                    <option>select country</option>#}
+{#                                    </select>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-md-6 col-12">#}
+{#                                <div class="form-group">#}
+{#                                    <label for="state">State</label>#}
+{#                                    <span id="state-code" class="form-control"><input type="text" class="form-control" id="state" name="state"></span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </diV>#}
 
-                                <a href=" {% static 'auth-login.html' %} ">Have an account? Login</a>
+                                <a href=" {% url 'login'%} ">Have an account? Login</a>
                         <div class="clearfix">
                             <button class="btn btn-primary float-right">Submit</button>
                         </div>
@@ -79,7 +111,7 @@
                             <button class="btn btn-block mb-2 btn-primary"><i data-feather="facebook"></i> Facebook</button>
                         </div>
                         <div class="col-sm-6">
-                            <button class="btn btn-block mb-2 btn-secondary"><i data-feather="fa fa-google"></i> Google</button>
+                            <button class="btn btn-block mb-2 btn-secondary"><i data-feather="google"></i> Google</button>
                         </div>
                     </div>
                 </div>
@@ -91,6 +123,7 @@
     </div>
     <script src=" {% static 'assets/js/feather-icons/feather.min.js' %} "></script>
     <script src=" {% static 'assets/js/app.js' %} "></script>
+
     <script src=" {% static 'assets/js/main.js' %} "></script>
     <script>
         // user country code for selected option
@@ -134,7 +167,7 @@ let user_country_code = "IN";
             }
             option += '</select>';
         } else {
-            // create input textbox if no states 
+            // create input textbox if no states
             option = text_box
         }
         state_code_id.innerHTML = option;
