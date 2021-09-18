@@ -20,6 +20,7 @@ class Investor(models.Model):
     acc_name = models.CharField(max_length=50, blank=False)
     acc_no = models.CharField(max_length=10, unique=True)
     bank_name = models.CharField(max_length=50, blank=False)
+    # isinvestor = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.get_full_name()

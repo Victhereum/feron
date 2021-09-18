@@ -4,10 +4,20 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.conf import settings
-
-# from django import forms
+from driver.models import Driver
+from investor.models import Investor
+from django.contrib.auth.models import Group
 from . import forms
 from . import models
+
+
+# for checking if user is either an Investor or a driver
+def is_investor(user):
+    return user.groups.filter(name='INVESTORS').exists()
+
+
+def is_driver(user):
+    return user.groups.filter(name='DRIVERS').exists()
 
 
 def home_view(request):
@@ -20,9 +30,10 @@ def home_view(request):
             name = sub.cleaned_data['Name']
             email = sub.cleaned_data['Email']
             phone_no = sub.cleaned_data['Phone']
-            send_mail(str(name)+' || '+str(email), str(phone_no), settings.EMAIL_HOST_USER, settings.EMAIL_RECEIVING_USER, fail_silently=False)
-            return render(request, 'index.html')
-    return render(request, 'index.html', {'form': enq})
+            send_mail(str(name) + ' || ' + str(email), str(phone_no), settings.EMAIL_HOST_USER,
+                      settings.EMAIL_RECEIVING_USER, fail_silently=False)
+            return render(request, 'pages/home.html')
+    return render(request, 'pages/home.html', {'form': enq})
 
 
 def login_view(request):
@@ -37,9 +48,12 @@ def login_view(request):
             password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
             if user:
-                if user.is_active and user.is_authenticated:
+                if user.is_active and user.is_authenticated and is_investor(user):
                     login(request, user)
                     return redirect("inv-dashboard")
+                elif user.is_active and user.is_authenticated and is_driver(user):
+                    login(request, user)
+                    return redirect("dri-dashboard")
             else:
                 msg = 'Invalid credentials'
         else:

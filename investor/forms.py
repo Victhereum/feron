@@ -1,3 +1,5 @@
+from django.db import transaction
+
 from .models import Investor, Feedback
 from django.contrib.auth import get_user_model
 from django import forms
@@ -49,6 +51,14 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+
+    @transaction.atomic
+    def save(self):
+        user = super().save(commit=False)
+        user.is_investor = True
+        user.save()
+        investor = Investor.objects.create(user=user)
+        return user
 
 
 class InvestorForm(forms.Form):

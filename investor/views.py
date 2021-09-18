@@ -143,6 +143,7 @@ from django.http import HttpResponse
 
 from investor import models
 from .forms import SignUpForm
+from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -159,6 +160,8 @@ def investor_signup_view(request):
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
+            g = Group.objects.get_or_create(name='INVESTORS')
+            g[0].user_set.add(user)
 
 
             msg = 'User created - please <a href="/login">login</a>.'

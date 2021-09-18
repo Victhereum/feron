@@ -1,6 +1,8 @@
 from django.db import connections
 from django.db.models.functions import ExtractWeek
 from django.shortcuts import render
+
+from driver.models import Driver
 from investor.models import Investor
 from .models import VehicleInfo, InvestorVehicle, DriverVehicle, Accounting
 from django.db.models import Sum
@@ -43,3 +45,11 @@ def inv_accounting(request):
         'record': record,
     }
     return render(request, 'investor/investor-accounting.html', context=data)
+
+def dri_dashboard_view(request):
+    username = Driver.objects.get(user_id=request.user.id)
+
+    data = {
+        'username': username,
+    }
+    return render(request, 'driver/dri-dashboard.html', context=data)

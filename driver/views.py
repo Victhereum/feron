@@ -1,3 +1,4 @@
+from django.contrib.auth.models import Group
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.forms.utils import ErrorList
@@ -18,11 +19,12 @@ def driver_signup_view(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             driver = form.save()
-            driver.is_driver = True
+
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
-
+            g = Group.objects.get_or_create(name='DRIVERS')
+            g[0].user_set.add(user)
 
             msg = 'User created - please <a href="/login">login</a>.'
             success = True

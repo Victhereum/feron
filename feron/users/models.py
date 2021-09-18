@@ -4,8 +4,8 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    is_driver = False
-    is_investor = False
+    is_driver = models.BooleanField(default=False)
+    is_investor = models.BooleanField(default=False)
 
 class Enquiry(models.Model):
     name = models.CharField(max_length=30)
