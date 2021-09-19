@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/driver/dri-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/driver/dri-dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/investor/dashboard-partial.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/investor/dashboard-partial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +170,7 @@
       <workItem from="1631386427325" duration="38196000" />
       <workItem from="1631542780719" duration="1459000" />
       <workItem from="1631545980822" duration="26681000" />
-      <workItem from="1631891229862" duration="20601000" />
+      <workItem from="1631891229862" duration="24137000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -231,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632001675460</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Modified .gitignore file against FeronFilesNotUsed Folder">
+      <created>1632001897457</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1632001897457</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +270,8 @@
     <MESSAGE value="Changed the logo" />
     <MESSAGE value="Fixed Sign Up Options" />
     <MESSAGE value="Driver Dashboard implementation started" />
-    <option name="LAST_COMMIT_MESSAGE" value="Driver Dashboard implementation started" />
+    <MESSAGE value="Modified .gitignore file against FeronFilesNotUsed Folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified .gitignore file against FeronFilesNotUsed Folder" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/feron$views.coverage" NAME="views Coverage Results" MODIFIED="1631140989366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vehicle" />

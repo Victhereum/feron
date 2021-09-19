@@ -48,8 +48,17 @@ def inv_accounting(request):
 
 def dri_dashboard_view(request):
     username = Driver.objects.get(user_id=request.user.id)
+    dri_vehicle = DriverVehicle.objects.filter(driver__user_id=request.user.id).prefetch_related('vehicle')
+    details = DriverVehicle.objects.filter\
+        (driver__user_id=request.user.id).only(
+        'driver__hired_date', 'vehicle__plate_no', 'vehicle__type', 'vehicle__type__vehicleinfo', 'driver__hired_status', 'driver__hire_ending' )
+
+    print(dri_vehicle)
+
 
     data = {
         'username': username,
+        'dri_vehicle': dri_vehicle,
+        'details': details
     }
     return render(request, 'driver/dri-dashboard.html', context=data)

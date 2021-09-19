@@ -262,6 +262,7 @@
                         <span class="nav_logo-name">Feron</span>
                     </a>
                     <div class="nav_list">
+                        {% if user.is_investor %}
                         <a href="{% url 'inv-dashboard' %}" class="nav_link active">
                             <i class='bx bx-grid-alt nav_icon'></i>
                             <span class="nav_name">Dashboard</span>
@@ -279,6 +280,25 @@
                             <span class="nav_name">Settings</span>
                         </a>
                         <a href="#" class="nav_link"> </a>
+                        {% else %}
+                        <a href="{% url 'dri-dashboard' %}" class="nav_link active">
+                            <i class='bx bx-grid-alt nav_icon'></i>
+                            <span class="nav_name">Dashboard</span>
+                        </a>
+                        <a href="{% url 'inv-accounting' %}" class="nav_link">
+                            <i class='bx bx-money nav_icon'></i>
+                            <span class="nav_name">Accounting</span>
+                        </a>
+                        <a href="#" class="nav_link">
+                            <i class='bx bx-message-square-detail nav_icon'></i>
+                            <span class="nav_name">Feedback</span>
+                        </a>
+                        <a href="#" class="nav_link">
+                            <i class='bx bx-cog nav_icon'></i>
+                            <span class="nav_name">Settings</span>
+                        </a>
+                        <a href="#" class="nav_link"> </a>
+                        {% endif %}
                     </div>
                 </div>
                 <a href=" {% url 'account_logout' %} " class="nav_link">
