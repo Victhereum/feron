@@ -8,4 +8,6 @@ urlpatterns = [
 
     # Driver Vehicle
     path('driver-dashboard/', views.dri_dashboard_view, name='dri-dashboard'),
+    path('driver-accounting/', views.dri_accounting_view, name='dri-accounting'),
+
 ]
