@@ -45,6 +45,7 @@ class Driver(models.Model):
     hired_status = models.CharField(choices=HIRE_STATUS, max_length=50)
     hired_date = models.DateTimeField()
     hire_ending = models.DateTimeField()
+    # isdriver = models.BooleanField(default=False)
 
     def get_absolute_url(self):
         """Get url for user's detail view.

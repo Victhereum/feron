@@ -1,6 +1,9 @@
 from django.db import connections
 from django.db.models.functions import ExtractWeek
 from django.shortcuts import render
+
+from feron.users.views import is_driver, is_investor
+from driver.models import Driver
 from investor.models import Investor
 from .models import VehicleInfo, InvestorVehicle, DriverVehicle, Accounting
 from django.db.models import Sum
@@ -8,6 +11,7 @@ from django.db.models import Sum
 
 def inv_dashboard_view(request):
     username = Investor.objects.get(user_id=request.user.id)
+    user_is_investor = is_investor(request.user)
     inv_vehicles = InvestorVehicle.objects.filter(investor__user_id=request.user.id).prefetch_related('vehicle')
     info = InvestorVehicle.objects.filter(investor__user_id=request.user.id).prefetch_related \
         ('vehicle__type__vehicleinfo_set').values \
@@ -19,8 +23,9 @@ def inv_dashboard_view(request):
 
     # vehicles_amount = InvestorVehicle.objects.filter(vehicle__interest_amount=)
 
-    # print(proj_amount)
+    print(user_is_investor)
     dic = {
+        'investor': user_is_investor,
         'username': username,
         'inv_vehicles': inv_vehicles,
         'info': info,
@@ -31,6 +36,7 @@ def inv_dashboard_view(request):
 
 def inv_accounting(request):
     username = Investor.objects.get(user_id=request.user.id)
+    user_is_investor = is_investor(request.user)
     record = Accounting.objects.filter(investor__investor__user_id=request.user.id).prefetch_related(
         'investor__vehicle__DriverAssignedVehicle').values(
         'investor__vehicle', 'investor__vehicle__make', 'investor__vehicle__paid_so_far',
@@ -39,7 +45,57 @@ def inv_accounting(request):
     print(record)
 
     data = {
+        'investor': user_is_investor,
         'username': username,
         'record': record,
     }
     return render(request, 'investor/investor-accounting.html', context=data)
+
+
+def dri_dashboard_view(request):
+    username = Driver.objects.get(user_id=request.user.id)
+    user_is_driver = is_driver(request.user)
+    dri_vehicle = DriverVehicle.objects.filter(driver__user_id=request.user.id).prefetch_related('vehicle')
+    details = DriverVehicle.objects.filter \
+        (driver__user_id=request.user.id).values(
+        'driver__hired_date', 'vehicle__plate_no',
+        'vehicle__model', 'vehicle__make', 'driver__hired_status', 'vehicle__type__type',
+        'driver__hire_ending')
+
+    print(details)
+
+    data = {
+        'driver': user_is_driver,
+        'username': username,
+        'dri_vehicle': dri_vehicle,
+        'details': details
+    }
+    return render(request, 'driver/dri-dashboard.html', context=data)
+
+
+def dri_accounting_view(request):
+    username = Driver.objects.get(user_id=request.user.id)
+    user_is_driver = is_driver(request.user)
+    records = Accounting.objects.filter(driver__driver__user_id=request.user.id).prefetch_related(
+        'investor__vehicle__DriverAssignedVehicle').values(
+        'investor__vehicle__left_to_pay', 'investor__vehicle__paid_so_far', 'date', 'status'
+    )
+
+    tenure = Accounting.objects.filter(driver__driver__user_id=request.user.id).prefetch_related(
+        'investor__vehicle__DriverAssignedVehicle').values_list('status')
+
+    payed = 0
+    for payed_status in tenure:
+        # count = payed_status.count
+        if payed_status == payed_status[0]:
+            payed = payed + 1
+
+    status = payed
+    print(status)
+    data = {
+        'tenure': tenure,
+        'driver': user_is_driver,
+        'username': username,
+        'records': records,
+    }
+    return render(request, 'driver/dri-accounting.html', context=data)

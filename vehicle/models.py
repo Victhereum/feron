@@ -19,9 +19,9 @@ VEHICLE_CHOICES = (
 )
 
 INSPECTION_CHOICES = (
-('good', 'In Good Shape'),
-('bad', 'Needs Repairs'),
-('repaired', 'Have been Repaired'),
+    ('good', 'In Good Shape'),
+    ('bad', 'Needs Repairs'),
+    ('repaired', 'Have been Repaired'),
 )
 
 VEHICLE_STATUS = (
@@ -31,11 +31,12 @@ VEHICLE_STATUS = (
 )
 
 PAYMENT_STATUS = (
-    ('payed', 'Payed'),
-    ('due', 'Due'),
+    ('Payed', 'Payed'),
+    ('Due', 'Due'),
     ('not payed', 'Not Payed'),
     ('completed', 'Completed'),
 )
+
 
 class VehicleType(models.Model):
     type = models.CharField(max_length=150, blank=False, choices=VEHICLE_CHOICES, default=VEHICLE_CHOICES[0][0])
@@ -45,6 +46,7 @@ class VehicleType(models.Model):
 
     class Meta:
         ordering = ['type']
+
 
 class VehicleInfo(models.Model):
     type = models.ForeignKey(VehicleType, on_delete=models.CASCADE)
@@ -58,7 +60,8 @@ class VehicleInfo(models.Model):
     tracker_imei_no = models.IntegerField(blank=False, unique=True)
     # TODO: get the neccesary detail for the vehicle papers and correct before launching
     vehicle_papers = models.FileField(upload_to='vehicle_papers')
-    inspection = models.CharField(max_length=25, blank=False, choices=INSPECTION_CHOICES, default=INSPECTION_CHOICES[0][0])
+    inspection = models.CharField(max_length=25, blank=False, choices=INSPECTION_CHOICES,
+                                  default=INSPECTION_CHOICES[0][0])
     inspection_description = models.TextField(max_length=500, blank=False)
     value_at_acquisition = models.IntegerField()
     interest_amount = models.IntegerField()
@@ -70,7 +73,6 @@ class VehicleInfo(models.Model):
     # tenure_duration = models.DateField(blank=True)
     hired_date = models.DateField()
     hire_ending = models.DateField()
-
 
     def __str__(self):
         return self.plate_no
@@ -87,7 +89,9 @@ class DriverVehicle(models.Model):
         return self.driver.user.email
 
     class Meta:
-        unique_together = ('driver', 'vehicle')
+        constraints = [
+            models.UniqueConstraint(fields=['driver', 'vehicle'], name='unique_driver_vehicle')
+        ]
 
 
 class InvestorVehicle(models.Model):
@@ -98,22 +102,20 @@ class InvestorVehicle(models.Model):
         return f'{self.investor.acc_name} {self.vehicle.make} {self.vehicle.model}'
 
     class Meta:
-        unique_together = ('investor', 'vehicle')
+        constraints = [
+            models.UniqueConstraint(fields=['investor', 'vehicle'], name='unique_investor_vehicle')
+        ]
 
 
 class Accounting(models.Model):
     driver = models.ForeignKey(DriverVehicle, on_delete=models.CASCADE, related_name='driver_accounting', blank=False)
-    investor = models.ForeignKey(InvestorVehicle, on_delete=models.CASCADE, related_name='investor_accounting', blank=False)
+    investor = models.ForeignKey(InvestorVehicle, on_delete=models.CASCADE, related_name='investor_accounting',
+                                 blank=False)
     date = models.DateField(unique=True)
-    status = models.CharField(choices=PAYMENT_STATUS,  max_length=20)
+    status = models.CharField(choices=PAYMENT_STATUS, max_length=20)
 
     def __str__(self):
         return f'{self.driver.driver.user.get_full_name()} {self.investor.investor.user.get_full_name()} {self.status}'
 
     class Meta:
         ordering = ['date']
-
-
-
-
-

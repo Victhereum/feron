@@ -1,9 +1,21 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
+<body>
+    <div id="error">
 
-{% block title %}Page not found{% endblock %}
+<div class="container text-center pt-32">
+    <h1 class='error-title'>404</h1>
+    <p>we couldn't find the page you are looking for</p>
+    <a href="{% url 'home' %}" class='btn btn-primary'>Go Home</a>
+    <div class="footer pt-32">
+           <p class="text-center">Thanks For Making This A Reality</p>
+    </div>
+</div>
 
-{% block content %}
-<h1>Page not found</h1>
+    </div>
 
-<p>{% if exception %}{{ exception }}{% else %}This is not the page you were looking for.{% endif %}</p>
-{% endblock content %}
+    {% block footer %}
+
+    {% endblock footer %}
+</body>
+</html>

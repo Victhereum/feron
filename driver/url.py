@@ -19,5 +19,5 @@ from . import views
 app_name = 'driver'
 
 urlpatterns = [
-    path('dri-signup/', views.driver_signup_view , name='dri-signup'),
+    path('dri-signup/', views.driver_signup_view, name='dri-signup'),
 ]

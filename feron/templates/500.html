@@ -1,11 +1,19 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
+<body>
+    <div id="error">
 
-{% block title %}Server Error{% endblock %}
+<div class="container text-center pt-32">
+    <h1 class='error-title'>500</h1>
+    <p>SYSTEM ERROR. Please contact administrator.</p>
+    <a href="{% url 'home' %}" class='btn btn-primary'>Go Home</a>
+</div>
+        <div class="footer pt-32">
+            <p class="text-center">Thanks For Making This A Reality</p>
+        </div>
+    </div>
 
-{% block content %}
-<h1>Ooops!!! 500</h1>
-
-<h3>Looks like something went wrong!</h3>
-
-<p>We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.</p>
-{% endblock content %}
+    {% block footer %}
+    {% endblock footer %}
+</body>
+</html>

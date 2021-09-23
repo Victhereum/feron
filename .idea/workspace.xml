@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/feron/static/images/Feron-Logo-with-text.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feron/static/images/Feron-Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FeronFilesNotUsed/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FeronFilesNotUsed/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FeronFilesNotUsed/500.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/feron/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/driver/dri-accounting.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/driver/dri-accounting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/investor/dashboard-partial.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/investor/dashboard-partial.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feron/templates/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/pages/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +62,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -80,16 +90,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/feron/static/images" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/feron/templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\static\images" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\investor" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\account" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\driver" />
-      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\driver" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\FeronFilesNotUsed" />
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\Feron Files Not used" />
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\users" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -166,7 +181,10 @@
       <workItem from="1631342871461" duration="9415000" />
       <workItem from="1631386427325" duration="38196000" />
       <workItem from="1631542780719" duration="1459000" />
-      <workItem from="1631545980822" duration="24196000" />
+      <workItem from="1631545980822" duration="26681000" />
+      <workItem from="1631891229862" duration="29891000" />
+      <workItem from="1632094146237" duration="17575000" />
+      <workItem from="1632269797280" duration="97000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -203,7 +221,56 @@
       <option name="project" value="LOCAL" />
       <updated>1631572959421</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changed the logo">
+      <created>1631578822256</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631578822256</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Changed the logo">
+      <created>1631892792918</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631892792918</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed Sign Up Options">
+      <created>1631897647254</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1631897647254</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Driver Dashboard implementation started">
+      <created>1632001675460</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1632001675460</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Modified .gitignore file against FeronFilesNotUsed Folder">
+      <created>1632001897457</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1632001897457</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Driver">
+      <created>1632015682881</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1632015682882</updated>
+    </task>
+    <task id="LOCAL-00012" summary="removed Unused file folder in .gitignore">
+      <created>1632224440964</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1632224440964</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +295,13 @@
     <MESSAGE value="Investor can signup, sign in and view their dashboard, but the values are yet to be displayed" />
     <MESSAGE value="added new items to .gitignore file" />
     <MESSAGE value="Investor Section working except the feeback section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Investor Section working except the feeback section" />
+    <MESSAGE value="Changed the logo" />
+    <MESSAGE value="Fixed Sign Up Options" />
+    <MESSAGE value="Driver Dashboard implementation started" />
+    <MESSAGE value="Modified .gitignore file against FeronFilesNotUsed Folder" />
+    <MESSAGE value="Driver" />
+    <MESSAGE value="removed Unused file folder in .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed Unused file folder in .gitignore" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/feron$views.coverage" NAME="views Coverage Results" MODIFIED="1631140989366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vehicle" />
