@@ -262,7 +262,7 @@
                         <span class="nav_logo-name">Feron</span>
                     </a>
                     <div class="nav_list">
-                        {% if user.is_investor %}
+                        {% if investor %}
                         <a href="{% url 'inv-dashboard' %}" class="nav_link active">
                             <i class='bx bx-grid-alt nav_icon'></i>
                             <span class="nav_name">Dashboard</span>
@@ -280,7 +280,7 @@
                             <span class="nav_name">Settings</span>
                         </a>
                         <a href="#" class="nav_link"> </a>
-                        {% else %}
+                        {% elif driver %}
                         <a href="{% url 'dri-dashboard' %}" class="nav_link active">
                             <i class='bx bx-grid-alt nav_icon'></i>
                             <span class="nav_name">Dashboard</span>

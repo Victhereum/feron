@@ -1,9 +1,20 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
+<body>
+    <div id="error">
 
-{% block title %}Forbidden (403){% endblock %}
-
-{% block content %}
-<h1>Forbidden (403)</h1>
-
+<div class="container text-center pt-32">
+    <h1 class='error-title'>403</h1>
 <p>{% if exception %}{{ exception }}{% else %}You're not allowed to access this page.{% endif %}</p>
-{% endblock content %}
+    <a href="{% url 'home' %}" class='btn btn-primary'>Go Home</a>
+</div>
+
+        <div class="footer pt-32">
+            <p class="text-center">Thanks For Making This A Reality</p>
+        </div>
+    </div>
+{% block footer %}
+{% endblock footer %}
+
+</body>
+</html>

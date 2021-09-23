@@ -31,8 +31,8 @@ VEHICLE_STATUS = (
 )
 
 PAYMENT_STATUS = (
-    ('payed', 'Payed'),
-    ('due', 'Due'),
+    ('Payed', 'Payed'),
+    ('Due', 'Due'),
     ('not payed', 'Not Payed'),
     ('completed', 'Completed'),
 )

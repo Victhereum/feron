@@ -35,6 +35,52 @@ def home_view(request):
             return render(request, 'pages/home.html')
     return render(request, 'pages/home.html', {'form': enq})
 
+def services_view(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('dashboard')
+    enq = forms.EnquiryForm()
+    if request.method == 'POST':
+        sub = forms.EnquiryForm(request.POST)
+        if sub.is_valid():
+            name = sub.cleaned_data['Name']
+            email = sub.cleaned_data['Email']
+            phone_no = sub.cleaned_data['Phone']
+            send_mail(str(name) + ' || ' + str(email), str(phone_no), settings.EMAIL_HOST_USER,
+                      settings.EMAIL_RECEIVING_USER, fail_silently=False)
+            return render(request, '#services')
+    return render(request, 'pages/home.html#services', {'form': enq})
+
+
+def details_view(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('dashboard')
+    enq = forms.EnquiryForm()
+    if request.method == 'POST':
+        sub = forms.EnquiryForm(request.POST)
+        if sub.is_valid():
+            name = sub.cleaned_data['Name']
+            email = sub.cleaned_data['Email']
+            phone_no = sub.cleaned_data['Phone']
+            send_mail(str(name) + ' || ' + str(email), str(phone_no), settings.EMAIL_HOST_USER,
+                      settings.EMAIL_RECEIVING_USER, fail_silently=False)
+            return render(request, 'pages/home.html')
+    return render(request, 'pages/home.html', {'form': enq})
+
+def features_view(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('dashboard')
+    enq = forms.EnquiryForm()
+    if request.method == 'POST':
+        sub = forms.EnquiryForm(request.POST)
+        if sub.is_valid():
+            name = sub.cleaned_data['Name']
+            email = sub.cleaned_data['Email']
+            phone_no = sub.cleaned_data['Phone']
+            send_mail(str(name) + ' || ' + str(email), str(phone_no), settings.EMAIL_HOST_USER,
+                      settings.EMAIL_RECEIVING_USER, fail_silently=False)
+            return render(request, 'pages/home.html')
+    return render(request, 'pages/home.html', {'form': enq})
+
 
 def login_view(request):
     form = forms.LoginForm(request.POST or None)

@@ -22,7 +22,7 @@
   <div class="row align-items-start">
     <div class="col text-center">
         <p><b>Progress</b></p>
-<div class="progress-pie-chart" data-percent="85">
+<div class="progress-pie-chart" data-percent="{{ tenure }}">
   <div class="ppc-progress">
     <div class="ppc-progress-fill"></div>
   </div>
@@ -33,7 +33,6 @@
   </div>
 </div>
     </div>
-      {% for record in records %}
     <div class="col text-center">
       <p><b>Deposited</b></p>
       <hr>
@@ -62,11 +61,13 @@
     </tr>
   </thead>
   <tbody>
+  {% for record in records %}
     <tr>
-      <th scope="row">1</th>
-      <td>2 Feb, 2021</td>
-      <td>Payed</td>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{record.date}}</td>
+      <td>{{ record.status }}</td>
     </tr>
+  {% endfor %}
   </table>
 
 <div class="col text-center">
