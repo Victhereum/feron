@@ -1,8 +1,9 @@
 from django.db import models
 from django.db.models.enums import Choices
 from django.urls import reverse
-# from phonenumber_field.modelfields import PhoneNumberField
+from smart_selects.db_fields import ChainedForeignKey
 from feron.users.models import User
+from helpers.models import Country, State
 
 WEEK_CHOICES = (
     (''),
@@ -10,20 +11,20 @@ WEEK_CHOICES = (
 
 DUES_CHOICES = (
     ('payed', 'Payed'),
-    ('not payed', 'Not Payed'),
-    ('due', 'Due'),
+    ('Not Payed', 'Not Payed'),
+    ('Due', 'Due'),
 )
 
 FLAG_CHOICES = (
     ('Yellow Flag', 'Yellow Flag'),
-    ('red flag', 'Red Flag'),
+    ('Red flag', 'Red Flag'),
 )
 
 HIRE_STATUS = (
-    ('reviewing', 'Reviewing'),
-    ('not hired', 'Not Hired'),
+    ('Reviewing', 'Reviewing'),
+    ('Not hired', 'Not Hired'),
     ('Hired', 'Hired'),
-    ('completed', 'Completed'),
+    ('Completed', 'Completed'),
 )
 
 
@@ -34,18 +35,22 @@ class Driver(models.Model):
 
     # Contact
     phone_number = models.CharField(max_length=15, blank=False, unique=True)
-    country = models.CharField(max_length=30, blank=False)
-    state = models.CharField(max_length=30, blank=False)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='driver_country')
+    state = ChainedForeignKey(State, on_delete=models.SET_NULL, null=True, chained_field='country', chained_model_field='country')
     address = models.CharField(max_length=100, blank=False)
 
     # Documents
     # TODO: Get to know the neccesary documents to take from the driver on order to vet them
+    id_card = models.FileField()
+    id_card_no = models.CharField(max_length=50)
+    guarantors_papers = models.FileField()
+
     # Other Information
     date_joined = models.DateTimeField(auto_now_add=True)
     hired_status = models.CharField(choices=HIRE_STATUS, max_length=50)
-    hired_date = models.DateTimeField()
-    hire_ending = models.DateTimeField()
-    # isdriver = models.BooleanField(default=False)
+    hired_date = models.DateField()
+    hire_ending = models.DateField()
+    email_verified = models.BooleanField(default=False)
 
     def get_absolute_url(self):
         """Get url for user's detail view.

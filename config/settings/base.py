@@ -90,13 +90,15 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "smart_selects",
 ]
 
 LOCAL_APPS = [
     "feron.users.apps.UsersConfig",
     "driver",
     "investor",
-    "vehicle"
+    "vehicle",
+    "helpers",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

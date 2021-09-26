@@ -25,7 +25,8 @@
                         <h3>Sign Up</h3>
                         <p>Please fill the form to register as driver </p>
                     </div>
-                    <form action="{% url 'driver:dri-signup' %}" method="post">
+                    <form action="{% url 'driver:dri-signup
+                     %}" method="post">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6 col-12">
@@ -82,6 +83,9 @@
                                     {{ form.password2 }}
                                 </div>
                             </div>
+		        {% for error in field.errors %}
+		          <p style="color: red">{{ error }}</p>
+		        {% endfor %}
 {#                            <div class="col-md-6 col-12">#}
 {#                                <div class="form-group">#}
 {#                                    <label for="country">Country</label>#}

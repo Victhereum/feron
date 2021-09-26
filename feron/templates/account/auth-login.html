@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in - Voler Admin Dashboard</title>
+    <title>Sign in :: Feron Auto Dashboard</title>
     <link rel="stylesheet" href=" {% static 'assets/css/bootstrap.css' %} ">
 
     <link rel="shortcut icon" href=" {% static 'images/favicon.png' %} " type="image/x-icon">
@@ -23,7 +23,7 @@
                     <div class="text-center mb-5">
                         <img src=" {% static 'images/favicon.png' %} " height="48" class='mb-4'>
                         <h3>Sign In</h3>
-                        <p>Please sign in to continue to RiderBase.</p>
+                        <p>Please sign in to view your dashboard.</p>
                     </div>
                     <form action="{% url 'login' %}" method="post">
                         {% csrf_token %}
@@ -50,14 +50,27 @@
                                 </div>
                             </div>
                         </div>
-
+                        {% if form.errors %}
+                            <p class="text-danger">
+                                Your username and password didn't match.
+                                Please try again.
+                            </p>
+                        {% endif %}
+                        {% if msg %}
+{#                        {% for error in msg %}#}
+                            <p class="text-danger">
+                                {{ msg }}
+                            </p>
+{#                        {% endfor %}#}
+                        {% endif %}
                         <div class='form-check clearfix my-4'>
                             <div class="checkbox float-left">
                                 <input type="checkbox" id="checkbox1" class='form-check-input' >
                                 <label for="checkbox1">Remember me</label>
                             </div>
+
                             <div class="float-right">
-                                <a href=" {% static 'auth-register.html' %} ">Don't have an account?</a>
+                                <a href=" {% url 'login' %} ">Don't have an account?</a>
                             </div>
                         </div>
                         <div class="clearfix">

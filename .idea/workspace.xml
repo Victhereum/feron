@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="Fixed favicon and log">
+    <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/helpers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helpers/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helpers/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helpers/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helpers/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helpers/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/static/images/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/feron/static/images/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/contrib/sites/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/contrib/sites/migrations/0002_alter_domain_unique.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/contrib/sites/migrations/0003_set_site_domain_and_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/contrib/sites/migrations/0004_alter_options_ordering_domain.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/contrib/sites/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/account/auth-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/account/auth-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/driver/driver-auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/driver/driver-auth-register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/investor/inv-auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/investor/inv-auth-register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/investor/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/investor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +193,13 @@
       <workItem from="1631891229862" duration="29891000" />
       <workItem from="1632094146237" duration="17575000" />
       <workItem from="1632269797280" duration="736000" />
-      <workItem from="1632398807745" duration="2734000" />
+      <workItem from="1632398807745" duration="3774000" />
+      <workItem from="1632435700958" duration="3141000" />
+      <workItem from="1632503668487" duration="2035000" />
+      <workItem from="1632521194005" duration="984000" />
+      <workItem from="1632525290270" duration="2299000" />
+      <workItem from="1632581390468" duration="424000" />
+      <workItem from="1632582279441" duration="3715000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -266,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632395903729</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed favicon">
+      <created>1632423545430</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1632423545430</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +331,8 @@
     <MESSAGE value="Driver" />
     <MESSAGE value="removed Unused file folder in .gitignore" />
     <MESSAGE value="Fixed error pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed error pages" />
+    <MESSAGE value="Fixed favicon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed favicon" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/feron$views.coverage" NAME="views Coverage Results" MODIFIED="1631140989366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vehicle" />

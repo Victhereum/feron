@@ -59,7 +59,7 @@ class VehicleInfo(models.Model):
     plate_no = models.CharField(max_length=10, unique=True)
     tracker_imei_no = models.IntegerField(blank=False, unique=True)
     # TODO: get the neccesary detail for the vehicle papers and correct before launching
-    vehicle_papers = models.FileField(upload_to='vehicle_papers')
+    vehicle_papers = models.FileField(upload_to='vehicle_papers',)
     inspection = models.CharField(max_length=25, blank=False, choices=INSPECTION_CHOICES,
                                   default=INSPECTION_CHOICES[0][0])
     inspection_description = models.TextField(max_length=500, blank=False)
@@ -68,11 +68,12 @@ class VehicleInfo(models.Model):
     date_created = models.DateField(auto_now=True)
     status = models.CharField(max_length=50, choices=VEHICLE_STATUS)
     weekly_returns = models.IntegerField()
-    paid_so_far = models.IntegerField()
-    left_to_pay = models.IntegerField()
+    paid_so_far = models.PositiveIntegerField(blank=True)
+    left_to_pay = models.PositiveIntegerField(blank=True)
     # tenure_duration = models.DateField(blank=True)
     hired_date = models.DateField()
     hire_ending = models.DateField()
+    is_insured = models.BooleanField(default=False)
 
     def __str__(self):
         return self.plate_no

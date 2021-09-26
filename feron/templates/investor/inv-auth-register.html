@@ -46,12 +46,7 @@
                                     {{ form.username }}
                                 </div>
                             </div>
-{#                            <div class="col-md-6 col-12">#}
-{#                                <div class="form-group">#}
-{#                                    <label for="phone_no">Phone</label>#}
-{#                                    <input type="tel" id="phone_no" class="form-control" name="phone_no">#}
-{#                                </div>#}
-{#                            </div>#}
+
 {#                            <div class="col-md-6 col-12">#}
 {#                                <div class="form-group">#}
 {#                                    <label for="vehicle-type">Vehicle Type</label>#}
@@ -82,21 +77,28 @@
                                     {{ form.password2 }}
                                 </div>
                             </div>
-{#                            <div class="col-md-6 col-12">#}
-{#                                <div class="form-group">#}
-{#                                    <label for="country">Country</label>#}
-{#                                    <select type="text" id="country" class="form-control" name="country">#}
-{#                                    <option>select country</option>#}
-{#                                    </select>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="col-md-6 col-12">#}
-{#                                <div class="form-group">#}
-{#                                    <label for="state">State</label>#}
-{#                                    <span id="state-code" class="form-control"><input type="text" class="form-control" id="state" name="state"></span>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </diV>#}
+
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="phone_no">Phone</label>
+                                    <input type="tel" id="phone_no" class="form-control" name="phone_no">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <select type="text" id="country" class="form-control" name="country">
+                                    <option>select country</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <span id="state-code" class="form-control"><input type="text" class="form-control" id="state" name="state"></span>
+                                </div>
+                            </div>
+                        </diV>
 
                                 <a href=" {% url 'login'%} ">Have an account? Login</a>
                         <div class="clearfix">
