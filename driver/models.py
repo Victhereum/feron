@@ -36,20 +36,21 @@ class Driver(models.Model):
     # Contact
     phone_number = models.CharField(max_length=15, blank=False, unique=True)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='driver_country')
-    state = ChainedForeignKey(State, on_delete=models.SET_NULL, null=True, chained_field='country', chained_model_field='country')
+    state = ChainedForeignKey(State, on_delete=models.SET_NULL, null=True, chained_field='country',
+                              chained_model_field='country')
     address = models.CharField(max_length=100, blank=False)
 
     # Documents
     # TODO: Get to know the neccesary documents to take from the driver on order to vet them
-    id_card = models.FileField()
-    id_card_no = models.CharField(max_length=50)
-    guarantors_papers = models.FileField()
+    id_card = models.FileField(blank=True, null=True)
+    id_card_no = models.CharField(max_length=50, blank=True, null=True)
+    guarantors_papers = models.FileField(blank=True, null=True)
 
     # Other Information
     date_joined = models.DateTimeField(auto_now_add=True)
-    hired_status = models.CharField(choices=HIRE_STATUS, max_length=50)
-    hired_date = models.DateField()
-    hire_ending = models.DateField()
+    hired_status = models.CharField(choices=HIRE_STATUS, default=HIRE_STATUS[0][0], max_length=50)
+    hired_date = models.DateField(blank=True, null=True)
+    hire_ending = models.DateField(blank=True, null=True)
     email_verified = models.BooleanField(default=False)
 
     def get_absolute_url(self):

@@ -2,29 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/helpers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/driver/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/contrib/sites/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/contrib/sites/migrations/0002_alter_domain_unique.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/contrib/sites/migrations/0003_set_site_domain_and_name.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/contrib/sites/migrations/0004_alter_options_ordering_domain.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/contrib/sites/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/templates/account/auth-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/account/auth-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/driver/dri-accounting.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/driver/dri-accounting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/driver/dri-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/driver/dri-dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feron/templates/driver/driver-auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/driver/driver-auth-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/templates/investor/inv-auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/investor/inv-auth-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/investor/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/investor/dashboard-partial.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/pages/dashboard-partial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/investor/inv-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/investor/inv-dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/investor/investor-accounting.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/investor/investor-accounting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/investor/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +53,26 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db.sqlite3 [2]" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db.sqlite3 [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db.sqlite3 [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
@@ -98,21 +115,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/feron/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/db.sqlite3" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\pages" />
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\FeronFilesNotUsed" />
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\Feron Files Not used" />
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\users" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\contrib\sites" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\static\images" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\investor" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\account" />
-      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\driver" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\FeronFilesNotUsed" />
-      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\Feron Files Not used" />
-      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\users" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -163,7 +181,7 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6c1a289d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3419328b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />

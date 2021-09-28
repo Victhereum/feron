@@ -48,6 +48,10 @@ class VehicleType(models.Model):
         ordering = ['type']
 
 
+class VehicleRoute(models.Model):
+    route = models.CharField(max_length=10)
+
+
 class VehicleInfo(models.Model):
     type = models.ForeignKey(VehicleType, on_delete=models.CASCADE)
     make = models.CharField(max_length=20, blank=False)
@@ -68,11 +72,12 @@ class VehicleInfo(models.Model):
     date_created = models.DateField(auto_now=True)
     status = models.CharField(max_length=50, choices=VEHICLE_STATUS)
     weekly_returns = models.IntegerField()
-    paid_so_far = models.PositiveIntegerField(blank=True)
-    left_to_pay = models.PositiveIntegerField(blank=True)
+    paid_so_far = models.PositiveIntegerField(blank=True, null=True)
+    left_to_pay = models.PositiveIntegerField(blank=True, null=True)
     # tenure_duration = models.DateField(blank=True)
-    hired_date = models.DateField()
-    hire_ending = models.DateField()
+    hired_date = models.DateField(blank=True, null=True)
+    hire_ending = models.DateField(blank=True, null=True)
+    route = models.ForeignKey(VehicleRoute, on_delete=models.CASCADE, null=True)
     is_insured = models.BooleanField(default=False)
 
     def __str__(self):
@@ -87,7 +92,7 @@ class DriverVehicle(models.Model):
     vehicle = models.ForeignKey(VehicleInfo, on_delete=models.CASCADE, related_name='DriverAssignedVehicle')
 
     def __str__(self):
-        return self.driver.user.email
+        return f'{self.vehicle.make}{self.vehicle.make} is driven by {self.driver.user.get_full_name()}'
 
     class Meta:
         constraints = [
@@ -100,7 +105,7 @@ class InvestorVehicle(models.Model):
     vehicle = models.ForeignKey(VehicleInfo, on_delete=models.CASCADE, related_name='VehiclesInvested')
 
     def __str__(self):
-        return f'{self.investor.acc_name} {self.vehicle.make} {self.vehicle.model}'
+        return f'{self.investor.user.get_full_name()} is the owner of {self.vehicle.make} {self.vehicle.model}'
 
     class Meta:
         constraints = [

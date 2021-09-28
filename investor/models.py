@@ -11,7 +11,7 @@ class Investor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='investor')
     # The user class provides AUTH data for username, First Name, Last Name and Email
     phone_no = models.CharField(max_length=15, unique=True)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='investor_country')
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
     state = ChainedForeignKey(State, on_delete=models.SET_NULL, null=True, chained_field='country', chained_model_field='country')
     address = models.CharField(max_length=50)
     date_joined = models.DateTimeField(auto_now_add=True)
@@ -21,11 +21,11 @@ class Investor(models.Model):
     bank_name = models.CharField(max_length=50, blank=False)
     email_verfied = models.BooleanField(default=False)
 
-    @receiver(post_save, sender=User)
-    def update_user_profile(sender, instance, created, **kwargs):
-        if created:
-            Investor.objects.create(user=instance)
-        instance.profile.save()
+    # @receiver(post_save, sender=User)
+    # def update_user_profile(sender, instance, created, **kwargs):
+    #     if created:
+    #         Investor.objects.create(user=instance)
+    #     instance.investor.save()
 
     def __str__(self):
         return self.user.get_full_name()
