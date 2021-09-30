@@ -142,11 +142,12 @@ from django.forms.utils import ErrorList
 from django.http import HttpResponse
 
 from investor import models
-from .forms import SignUpForm
+from .forms import SignUpForm, InvestorForm
 from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
+
 
 def investor_signup_view(request):
     msg = None
@@ -154,18 +155,25 @@ def investor_signup_view(request):
 
     if request.method == "POST":
         form = SignUpForm(request.POST)
-        if form.is_valid():
+        investor_form = InvestorForm(request.POST)
+        if form.is_valid() and investor_form.is_valid():
+
             investor = form.save()
-            investor.is_investor = True
+            # investor.is_investor = True
+
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
             g = Group.objects.get_or_create(name='INVESTORS')
             g[0].user_set.add(user)
-
+            # user.refresh_from_db()
 
             msg = 'User created - please <a href="/login">login</a>.'
             success = True
+
+            investor = investor_form.save(commit=False)
+            investor.user = user
+            investor.save()
 
             return redirect("login")
 
@@ -173,9 +181,10 @@ def investor_signup_view(request):
             msg = 'Form is not valid'
     else:
         form = SignUpForm()
+        investor_form = InvestorForm()
 
-    return render(request, "investor/inv-auth-register.html", {"form": form, "msg": msg, "success": success})
-
+    return render(request, "investor/inv-auth-register.html",
+                  {"form": form, 'investor': investor_form,  "msg": msg, "success": success})
 
 # @login_required(login_url='login')
 # def inv_dashboard(request):

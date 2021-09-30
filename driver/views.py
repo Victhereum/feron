@@ -70,12 +70,6 @@ def driver_signup_view(request):
             driver.user = user
             driver.save()
 
-
-            # Driver.country. = driver_form.cleaned_data.get('country')
-            # state = driver_form.cleaned_data.get('state')
-
-
-
             return redirect("login")
 
         else:
@@ -84,4 +78,5 @@ def driver_signup_view(request):
         form = SignUpForm()
         driver_form = DriverForm()
 
-    return render(request, "driver/driver-auth-register.html", {"form": form, 'driver': driver_form,  "msg": msg, "success": success})
+    return render(request, "driver/driver-auth-register.html",
+                  {"form": form, 'driver': driver_form, "msg": msg, "success": success})

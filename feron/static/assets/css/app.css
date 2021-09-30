@@ -8,7 +8,7 @@
  * @version	0.1
  * @author 	Ahmad Saugi
  * @url 	https://github.com/zuramai/voler
- * 
+ *
  */
 /**
  * TABLE OF CONTENTS
@@ -40,7 +40,7 @@
 /** 1. Variables  **/
 /**
  * VARIABLE - TABLE OF CONTENTS
- * 
+ *
  * 1. Theme Colors
  * 2. Bootstrap Override
  * 	  2.4 Alert
@@ -106,7 +106,7 @@
 }
 
 * {
-  font-family: "poppins";
+  font-family: "poppins", sans-serif;
 }
 
 #app {
@@ -1309,7 +1309,7 @@ footer {
 
 /** 4.1 Auth Pages **/
 #auth {
-  background: #fffff;
+  background: url("images/header-background.jpg") center center no-repeat;
   min-height: 100vh;
   padding-top: 100px;
   /* background-image: url(../images/background/auth.jpg); */
