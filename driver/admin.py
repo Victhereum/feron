@@ -4,7 +4,7 @@ from .models import Driver, Feedback
 
 
 class DriverAdmin(admin.ModelAdmin):
-    list_display = ('user', 'state', 'phone_number', 'hired_status', 'email_verified')
+    list_display = ('user', 'state', 'phone_number', 'hired_status',)
 
 
 admin.site.register(Driver, DriverAdmin)

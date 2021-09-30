@@ -161,9 +161,10 @@ def investor_signup_view(request):
             investor = form.save()
             # investor.is_investor = True
 
-            username = form.cleaned_data.get("username")
+            # username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
-            user = authenticate(username=username, password=raw_password)
+            email = form.cleaned_data.get("email")
+            user = authenticate(email=email, password=raw_password)
             g = Group.objects.get_or_create(name='INVESTORS')
             g[0].user_set.add(user)
             # user.refresh_from_db()

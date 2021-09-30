@@ -22,7 +22,6 @@ class Investor(models.Model):
     acc_name = models.CharField(max_length=50, blank=False)
     acc_no = models.CharField(max_length=10)
     bank_name = models.CharField(max_length=50, blank=False)
-    email_verfied = models.BooleanField(default=False)
 
     # @receiver(post_save, sender=User)
     # def update_user_profile(sender, instance, created, **kwargs):

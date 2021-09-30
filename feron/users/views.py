@@ -45,8 +45,9 @@ def login_view(request):
 
         if form.is_valid():
             username = form.cleaned_data.get("username")
+            email = form.cleaned_data.get("email")
             password = form.cleaned_data.get("password")
-            user = authenticate(username=username, password=password)
+            user = authenticate(email=email, password=password, username=username)
             if user:
                 if user.is_active and user.is_authenticated and is_investor(user):
                     login(request, user)

@@ -4,7 +4,7 @@ from .models import Investor, Feedback
 
 
 class InvestorAdmin(admin.ModelAdmin):
-    list_display = ('user', 'state', 'phone_no', 'email_verfied')
+    list_display = ('user', 'state', 'phone_no',)
 
 
 admin.site.register(Investor, InvestorAdmin)
