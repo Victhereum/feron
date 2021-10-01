@@ -1,10 +1,10 @@
+import os
+from urllib.parse import urlparse
+
 from django.core.management.utils import get_random_secret_key
 
 from .base import *  # noqa
 from .base import env
-import os
-from urllib.parse import urlparse
-
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -72,7 +72,8 @@ SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
 
 # MEDIA
 # ------------------------------------------------------------------------------
-
+# https://docs.djangoproject.com/en/dev/ref/settings/#site-id
+SITE_ID = 1
 # TEMPLATES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#templates

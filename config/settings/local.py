@@ -21,7 +21,8 @@ CACHES = {
         "LOCATION": "",
     }
 }
-
+# https://docs.djangoproject.com/en/dev/ref/settings/#site-id
+SITE_ID = 2
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
