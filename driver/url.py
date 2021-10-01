@@ -14,10 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+
 from . import views
 
 app_name = 'driver'
 
 urlpatterns = [
     path('dri-signup/', views.driver_signup_view, name='dri-signup'),
+    path('verification_sent', views.activation_sent_view, name='activation_sent'),
+    path('activate/<slug:uidb64>/<slug:token>/', views.activate, name='activate'),
 ]
