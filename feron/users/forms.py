@@ -10,10 +10,17 @@ class EnquiryForm(forms.Form):
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(
+    # username = forms.CharField(
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             "placeholder": "Username",
+    #             "class": "form-control"
+    #         }
+    #     ))
+    email = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                "placeholder": "Username",
+                "placeholder": "Email",
                 "class": "form-control"
             }
         ))

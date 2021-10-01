@@ -84,14 +84,17 @@ def dri_accounting_view(request):
     tenure = Accounting.objects.filter(driver__driver__user_id=request.user.id).prefetch_related(
         'investor__vehicle__DriverAssignedVehicle').values_list('status')
 
-    payed = 0
-    for payed_status in tenure:
-        # count = payed_status.count
-        if payed_status == payed_status[0]:
-            payed = payed + 1
+    payed__so_far = Accounting.objects.filter(driver__driver__user_id=request.user.id).prefetch_related(
+        'investor__vehicle__DriverAssignedVehicle').values('investor__vehicle__paid_so_far').get()
 
-    status = payed
-    print(status)
+    # payed = 0
+    # for payed_status in tenure:
+    #     # count = payed_status.count
+    #     if payed_status == payed_status[0]:
+    #         payed = payed + 1
+    #
+    # status = payed
+    print(payed__so_far)
     data = {
         'tenure': tenure,
         'driver': user_is_driver,

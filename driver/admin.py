@@ -2,5 +2,10 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import Driver, Feedback
 
-admin.site.register(Driver)
+
+class DriverAdmin(admin.ModelAdmin):
+    list_display = ('user', 'state', 'phone_number', 'hired_status',)
+
+
+admin.site.register(Driver, DriverAdmin)
 admin.site.register(Feedback)

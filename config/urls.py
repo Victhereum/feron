@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth.views import LoginView
 from django.urls import include, path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
@@ -21,7 +20,10 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     path('driver/', include('driver.url'), ),
     path('investor/', include('investor.url'), ),
-    path('dashborad/', include('vehicle.url'), ),
+                  path('dashboard/', include('vehicle.url'), ),
+                  # Third Parties
+    path('chaining/', include('smart_selects.urls')),
+
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

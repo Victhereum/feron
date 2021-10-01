@@ -17,6 +17,7 @@ click==8.0.1
 colorama==0.4.4
 coverage==5.5
 cryptography==3.4.8
+django-smart-selects==1.5.9
 decorator==5.0.9
 defusedxml==0.7.1
 distlib==0.3.2
