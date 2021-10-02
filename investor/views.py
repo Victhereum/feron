@@ -11,6 +11,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 from feron.users.models import User
 from feron.users.tokens import account_activation_token
+from feron.users.views import is_investor
 from .forms import SignUpForm, InvestorForm
 
 
@@ -61,13 +62,17 @@ def investor_signup_view(request):
             investor.user = user
             investor.save()
 
+            inv = is_investor(request.user)
+
+
             current_site = get_current_site(request)
             subject = 'Please Activate Your Account'
 
             # load a template like get_template()
             # and calls its render() method immediately.
-            message = render_to_string('account/activation_request.html', {
+            message = render_to_string('account/investor_activation_request.html', {
                 'user': user,
+                'is_investor': inv,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
 
@@ -75,7 +80,7 @@ def investor_signup_view(request):
                 'token': account_activation_token.make_token(user),
             })
             user.email_user(subject, message)
-            return redirect('driver:activation_sent')
+            return redirect('activation_sent')
         else:
             msg = 'Form is not valid'
     else:

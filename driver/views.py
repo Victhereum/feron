@@ -10,6 +10,8 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 from feron.users.models import User
 from feron.users.tokens import account_activation_token
+# from feron.users import phone_verify
+from feron.users.views import is_driver
 from .forms import SignUpForm, DriverForm
 
 
@@ -62,12 +64,15 @@ def driver_signup_view(request):
             driver.user = user
             driver.save()
 
+            dri = is_driver(request.user)
+
             current_site = get_current_site(request)
             subject = 'Please Activate Your Account'
 
             # load a template like get_template()
             # and calls its render() method immediately.
-            message = render_to_string('account/activation_request.html', {
+            message = render_to_string('account/driver_activation_request.html', {
+                'is_driver': dri,
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
@@ -76,6 +81,7 @@ def driver_signup_view(request):
                 'token': account_activation_token.make_token(user),
             })
             user.email_user(subject, message)
+            # phone_verify.send(driver_form.cleaned_data.get('phone_number'))
             return redirect('driver:activation_sent')
 
         else:

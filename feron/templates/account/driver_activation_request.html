@@ -3,10 +3,6 @@
 
     Please click the following link to confirm your registration:
 
-    {% if driver %}
         http://{{ domain }}{% url 'driver:activate' uidb64=uid token=token %}
-    {% else %}
-        http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
-    {% endif %}
 
 {% endautoescape %}

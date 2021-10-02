@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="investors can now login using their email">
+    <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feron/templates/account/investor_activation_request.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feron/users/phone_verify.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/local.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/production.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/account/activation_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/account/driver_activation_request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/investor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/investor/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,8 +78,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -99,22 +107,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/db.sqlite3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/feron/templates/account" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\FeronFilesNotUsed" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\users" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\pages" />
-      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\FeronFilesNotUsed" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\Feron Files Not used" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\account" />
+      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\contrib\sites\migrations" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\contrib\sites" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates" />
       <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\static\images" />
-      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\investor" />
-      <recent name="C:\Users\VICTOR ISAAC\PycharmProjects\feron\feron\templates\account" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -204,6 +212,7 @@
       <workItem from="1632582279441" duration="3715000" />
       <workItem from="1632834493666" duration="17497000" />
       <workItem from="1633044204694" duration="8528000" />
+      <workItem from="1633197526103" duration="11555000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>

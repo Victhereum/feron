@@ -3,7 +3,10 @@ import os
 import sys
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 if __name__ == "__main__":
+    load_dotenv()  # Necessary for Twilio to function properly
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
 
     try:
