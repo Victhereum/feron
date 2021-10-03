@@ -1,9 +1,8 @@
-from django.db import transaction
-
-from .models import Investor, Feedback
-from django.contrib.auth import get_user_model
 from django import forms
+from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
+
+from .models import Investor
 
 User = get_user_model()
 
@@ -59,7 +58,7 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2',)
 
         error_messages = {
             "username": {"unique": ("This username has already been taken.")}
@@ -67,17 +66,17 @@ class SignUpForm(UserCreationForm):
 
 
 class InvestorForm(forms.ModelForm):
-    phone_no = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "placeholder": "e.g. +234 234 567 890",
-                "pattern": "^\+[\d]{8,20}",
-                "title": "Mobile number must start with country code e.g +234",
-                "data-msg": "Please enter your phone number",
-                "minlength": 8,
-            }
-        ))
+    # phone_no = forms.CharField(
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             "class": "form-control",
+    #             "placeholder": "e.g. +234 234 567 890",
+    #             "pattern": "^\+[\d]{8,20}",
+    #             "title": "Mobile number must start with country code e.g +234",
+    #             "data-msg": "Please enter your phone number",
+    #             "minlength": 8,
+    #         }
+    #     ))
 
     address = forms.CharField(
         widget=forms.TextInput(
@@ -107,7 +106,7 @@ class InvestorForm(forms.ModelForm):
 
     class Meta:
         model = Investor
-        fields = ['country', 'state', 'phone_no', 'address', 'acc_name', 'acc_no', 'bank_name']
+        fields = ['country', 'state', 'address', 'acc_name', 'acc_no', 'bank_name']
         widgets = {
             'country': forms.Select(
                 attrs={

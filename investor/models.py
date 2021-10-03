@@ -1,9 +1,8 @@
 from django.contrib.auth.models import AbstractUser
-from django.db.models.signals import post_save
-from django.dispatch.dispatcher import receiver
+from django.db import models
 from django.urls import reverse
 from smart_selects.db_fields import ChainedForeignKey
-from django.db import models
+
 from feron.users.models import User
 from helpers.models import Country, State
 
@@ -11,8 +10,7 @@ from helpers.models import Country, State
 class Investor(models.Model):
     # Personal Info
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='investor')
-    # The user class provides AUTH data for username, First Name, Last Name and Email
-    phone_no = models.CharField(max_length=15, unique=True)
+    # The user class provides AUTH data for username, First Name, Last Name, Phone No, and Email
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     state = ChainedForeignKey(State, on_delete=models.SET_NULL, null=True, chained_field='country',
                               chained_model_field='country')

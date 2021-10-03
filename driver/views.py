@@ -8,13 +8,16 @@ from django.urls import reverse
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
+from feron.users import phone_verify
+from feron.users.decorators import driver_email_verification_required
 from feron.users.models import User
 from feron.users.tokens import account_activation_token
-# from feron.users import phone_verify
 from feron.users.views import is_driver
-from .forms import SignUpForm, DriverForm
+from .forms import SignUpForm, DriverForm, OTPForm, PhoneNo
 
 
+# Email Verification
+# ...........................................................................................
 def activation_sent_view(request):
     return render(request, 'account/verification_sent.html')
 
@@ -32,12 +35,51 @@ def activate(request, uidb64, token):
         # set signup_confirmation true
         user.email_verified = True
         user.save()
+        user.refresh_from_db()
         login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-        return HttpResponseRedirect(reverse('dri-dashboard'))
+        return HttpResponseRedirect(reverse('driver:driverphone'))
     else:
         return render(request, 'account/account_inactive.html')
 
 
+# ...........................................................................
+
+# Phone Verification
+# .................................................................................
+@driver_email_verification_required
+def driver_phone(request):
+    if request.method == 'POST':
+        form = PhoneNo(request.POST)
+        if form.is_valid():
+            form.save()
+            phone_verify.send(form.cleaned_data.get('phone_no'))
+            return HttpResponseRedirect(reverse('driver:verifycode'))
+    else:
+        form = PhoneNo()
+    return render(request, 'account/dri_phone_form.html', {'form': form})
+
+
+# @login_required
+def verify_code(request):
+    if request.method == 'POST':
+        form = OTPForm(request.POST)
+        if form.is_valid():
+            code = form.cleaned_data.get('code')
+            if phone_verify.check(request.user.phone_no, code):
+                request.user.phone_no_verified = True
+                request.user.save()
+                login(request, request.user, backend='django.contrib.auth.backends.ModelBackend')
+                return HttpResponseRedirect(reverse('dri-dashboard'))
+    else:
+        form = OTPForm()
+    # return render(request, 'account/driver_phone_verify.html', {'form': form}) # switch to this template when the function
+    # works
+    return render(request, 'account/dri_phone_OTP.html', {'form': form})
+
+
+# .....................................................................................................
+
+# Us inputs from the user and save data into the driver table
 def driver_signup_view(request):
     msg = None
     success = False
@@ -50,6 +92,7 @@ def driver_signup_view(request):
 
             email = form.cleaned_data.get("email")
             raw_password = form.cleaned_data.get("password1")
+            # phone = form.cleaned_data.get("phone_no")
 
             user.is_active = False
             user.save()
@@ -81,7 +124,7 @@ def driver_signup_view(request):
                 'token': account_activation_token.make_token(user),
             })
             user.email_user(subject, message)
-            # phone_verify.send(driver_form.cleaned_data.get('phone_number'))
+            # phone_verify.send(driver_form.cleaned_data.get('phone_no'))
             return redirect('driver:activation_sent')
 
         else:

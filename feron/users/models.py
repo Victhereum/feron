@@ -5,6 +5,7 @@ from django.db import models
 
 class User(AbstractUser):
     email_verified = models.BooleanField(default=False)
+    phone_no = models.CharField(max_length=15, blank=False)  # Make this field unique
     phone_no_verified = models.BooleanField(default=False)
 
 
