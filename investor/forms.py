@@ -123,10 +123,34 @@ class InvestorForm(forms.ModelForm):
                        'title': 'Select State', 'autocomplete': 'off'}),
         }
 
-    # @transaction.atomic
-    # def save(self):
-    #     user = super().save(commit=False)
-    #     user.is_investor = True
-    #     user.save()
-    #     investor = Investor.objects.create(user=user)
-    #     return user
+
+class PhoneNo(forms.ModelForm):
+    phone_no = forms.CharField(
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "e.g. +234 234 567 890",
+                "pattern": "^\+[\d]{8,20}",
+                "title": "Mobile number must start with country code e.g +234",
+                "data-msg": "Please enter your phone number",
+                "minlength": 8,
+            }
+        ))
+
+    class Meta:
+        model = User
+        fields = ['phone_no']
+
+
+class OTPForm(forms.Form):
+    code = forms.CharField(
+        required=True,
+        max_length=6,
+        widget=forms.TextInput(
+            attrs={
+                "class": " form-control",
+                "type": "text",
+                "maxlength": "6",
+            }
+        ))
