@@ -1,12 +1,10 @@
-from django.db import connections
-from django.db.models.functions import ExtractWeek
 from django.shortcuts import render
 
-from feron.users.views import is_driver, is_investor
 from driver.models import Driver
+from feron.users.decorators import driver_phone_verification_required
+from feron.users.views import is_driver, is_investor
 from investor.models import Investor
-from .models import VehicleInfo, InvestorVehicle, DriverVehicle, Accounting
-from django.db.models import Sum
+from .models import InvestorVehicle, DriverVehicle, Accounting
 
 
 def inv_dashboard_view(request):
@@ -52,6 +50,8 @@ def inv_accounting(request):
     return render(request, 'investor/investor-accounting.html', context=data)
 
 
+# @login_required
+@driver_phone_verification_required
 def dri_dashboard_view(request):
     username = Driver.objects.get(user_id=request.user.id)
     user_is_driver = is_driver(request.user)

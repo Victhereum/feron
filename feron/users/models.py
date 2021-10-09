@@ -1,10 +1,12 @@
-from django.db import models
 # from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import AbstractUser
+from django.db import models
 
 
 class User(AbstractUser):
     email_verified = models.BooleanField(default=False)
+    phone_no = models.CharField(max_length=15, blank=False)  # Make this field unique
+    phone_no_verified = models.BooleanField(default=False)
 
 
     def __str__(self):

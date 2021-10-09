@@ -1,7 +1,7 @@
 from django.db import models
-from django.db.models.enums import Choices
 from django.urls import reverse
 from smart_selects.db_fields import ChainedForeignKey
+
 from feron.users.models import User
 from helpers.models import Country, State
 
@@ -34,8 +34,7 @@ class Driver(models.Model):
         User, on_delete=models.PROTECT, related_name='Driver')
 
     # Contact
-    phone_number = models.CharField(max_length=15, blank=False, unique=True)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='driver_country')
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, null=True, related_name='driver_country')
     state = ChainedForeignKey(State, on_delete=models.SET_NULL, null=True, chained_field='country',
                               chained_model_field='country')
     address = models.CharField(max_length=100, blank=False)

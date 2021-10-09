@@ -85,21 +85,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#features">Features</a>
                 </li>
-                {% if request.user.is_authenticated %}
-                    {% if investor %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'inv-dashboard' request.user.username  %}">Dashboard</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'dri-dashboard' request.user.username  %}">Dashboard</a>
-                        </li>
-                    {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
-                    </li>
+                {#                {% if request.user.is_authenticated %}#}
+                {#                    {% if investor %}#}
+                {#                        <li class="nav-item">#}
+                {#                            <a class="nav-link" href="{% url 'inv-dashboard' request.user.username  %}">Dashboard</a>#}
+                {#                        </li>#}
+                {#                    {% else %}#}
+                {#                        <li class="nav-item">#}
+                {#                            <a class="nav-link" href="{% url 'dri-dashboard' request.user.username  %}">Dashboard</a>#}
+                {#                        </li>#}
+                {#                    {% endif %}#}
+                {#                    <li class="nav-item">#}
+                {#                        <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>#}
+                {#                    </li>#}
                     </ul>
-                {% else %}
+            {#                {% else %}#}
                     <span class="nav-item">
                     <a class="btn-solid-sm" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Join Us</a>
                 </span>
@@ -134,7 +134,7 @@
                     </nav> <!-- end of navbar -->
                     <!-- end of navigation -->
 
-                {% endif %}
+{#                {% endif %}#}
 </ul>
 </div>
 </nav>

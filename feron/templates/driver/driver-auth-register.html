@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
     <link rel="stylesheet" href=" {% static 'assets/css/bootstrap.css' %} ">
-    <script src=" {% static './js/country-states.js' %} "></script>
     <link rel="shortcut icon" href=" {% static 'images/favicon.png' %} " type="image/x-icon">
     <link rel="stylesheet" href=" {% static 'assets/css/app.css' %} ">
 </head>
@@ -46,12 +45,12 @@
                                     {{ form.username }}
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12">
-                                <div class="form-group">
-                                    <label for="phone_no">Phone</label>
-                                    {{ driver.phone_number }}
-                                </div>
-                            </div>
+                            {#                            <div class="col-md-6 col-12">#}
+                            {#                                <div class="form-group">#}
+                            {#                                    <label for="phone_no">Phone</label>#}
+                            {#                                    {{ driver.phone_number }}#}
+                            {#                                </div>#}
+                            {#                            </div>#}
 {#                            <div class="col-md-6 col-12">#}
 {#                                <div class="form-group">#}
 {#                                    <label for="vehicle-type">Vehicle Type</label>#}

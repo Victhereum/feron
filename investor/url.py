@@ -21,4 +21,6 @@ urlpatterns = [
     path('inv-signup/', views.investor_signup_view, name='inv-signup'),
     path('verification_sent', views.activation_sent_view, name='activation_sent'),
     path('activate/<slug:uidb64>/<slug:token>/', views.activate, name='activate'),
+    path('driverphone/', views.investor_phone, name='investorphone'),
+    path('OTP/', views.verify_code, name='verifycode'),
 ]
