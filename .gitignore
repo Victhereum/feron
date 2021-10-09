@@ -73,7 +73,7 @@ ENV/
 .ropeproject
 
 # mkdocs documentation
-/site
+!/sites
 
 # mypy
 .mypy_cache/
