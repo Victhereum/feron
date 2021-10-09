@@ -113,6 +113,7 @@ tomli==1.2.1
 tornado==6.1
 traitlets==5.0.5
 typing-extensions==3.10.0.1
+twilio==7.1.0
 urllib3==1.26.6
 virtualenv==20.7.2
 wcwidth==0.2.5
