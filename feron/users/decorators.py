@@ -11,11 +11,11 @@ def driver_email_verification_required(f):
 
 
 def investor_phone_verification_required(f):
-    return user_passes_test(lambda u: u.phone_no_verified, login_url='/driver/driverphone/')(f)
+    return user_passes_test(lambda u: u.phone_no_verified, login_url='/investor/investorphone/')(f)
 
 
 def investor_email_verification_required(f):
-    return user_passes_test(lambda u: u.email_verified, login_url='/driver/dri-signup/')(f)
+    return user_passes_test(lambda u: u.email_verified, login_url='/investor/inv-signup/')(f)
 
 def investor_required(function=None, redirect_field_name=REDIRECT_FIELD_NAME, login_url='login'):
     """

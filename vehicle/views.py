@@ -1,12 +1,13 @@
 from django.shortcuts import render
 
 from driver.models import Driver
-from feron.users.decorators import driver_phone_verification_required
+from feron.users.decorators import driver_phone_verification_required, investor_phone_verification_required
 from feron.users.views import is_driver, is_investor
 from investor.models import Investor
 from .models import InvestorVehicle, DriverVehicle, Accounting
 
 
+@investor_phone_verification_required
 def inv_dashboard_view(request):
     username = Investor.objects.get(user_id=request.user.id)
     user_is_investor = is_investor(request.user)
