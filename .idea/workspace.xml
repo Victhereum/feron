@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gconfig.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +210,7 @@
       <workItem from="1633218721183" duration="13995000" />
       <workItem from="1633296530278" duration="5266000" />
       <workItem from="1633302373040" duration="2909000" />
-      <workItem from="1633302518553" duration="21332000" />
+      <workItem from="1633302518553" duration="22627000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -388,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633824592698</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="configuring gunicorn">
+      <created>1633830455034</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1633830455034</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +415,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Signup, Login and Dhashboard views are working, however not perfect2" />
     <MESSAGE value="Investor can signup, sign in and view their dashboard, but the values are yet to be displayed" />
     <MESSAGE value="added new items to .gitignore file" />
     <MESSAGE value="Investor Section working except the feeback section" />
@@ -434,7 +439,8 @@
     <MESSAGE value="added twilio to requirements.py" />
     <MESSAGE value="added sites migrations to git" />
     <MESSAGE value="changed os.environ to os.getenv for twilio phone verify" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed os.environ to os.getenv for twilio phone verify" />
+    <MESSAGE value="configuring gunicorn" />
+    <option name="LAST_COMMIT_MESSAGE" value="configuring gunicorn" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
