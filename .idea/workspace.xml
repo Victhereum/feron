@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/production.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -210,7 +209,7 @@
       <workItem from="1633218721183" duration="13995000" />
       <workItem from="1633296530278" duration="5266000" />
       <workItem from="1633302373040" duration="2909000" />
-      <workItem from="1633302518553" duration="25769000" />
+      <workItem from="1633302518553" duration="26491000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -401,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633831859166</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="changed the admin url from being updated in the getenv">
+      <created>1633843670407</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1633843670407</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +428,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="added new items to .gitignore file" />
     <MESSAGE value="Investor Section working except the feeback section" />
     <MESSAGE value="Changed the logo" />
     <MESSAGE value="Fixed Sign Up Options" />
@@ -447,7 +452,8 @@
     <MESSAGE value="changed os.environ to os.getenv for twilio phone verify" />
     <MESSAGE value="configuring gunicorn" />
     <MESSAGE value="added gevent to requirements.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="added gevent to requirements.py" />
+    <MESSAGE value="changed the admin url from being updated in the getenv" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the admin url from being updated in the getenv" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
