@@ -9,9 +9,7 @@ from feron.users.views import login_view
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-
     path('login/', login_view, name='login'),
-
                   # Django Admin, use {% url 'admin:index' %}
                   path('admin/', admin.site.urls),
     # User management
