@@ -1,6 +1,3 @@
-import os
-from urllib.parse import urlparse
-
 from django.core.management.utils import get_random_secret_key
 
 from .base import *  # noqa
@@ -104,8 +101,8 @@ EMAIL_SUBJECT_PREFIX = env(
 # ADMIN
 # ------------------------------------------------------------------------------
 # Django Admin URL regex.
-ADMIN_URL = os.getenv("DJANGO_ADMIN_URL")
-
+# ADMIN_URL = os.getenv("DJANGO_ADMIN_URL")
+ADMIN_URL = "gee/"
 # Anymail
 # ------------------------------------------------------------------------------
 # https://anymail.readthedocs.io/en/stable/installation/#installing-anymail
