@@ -70,7 +70,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
 # MEDIA
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
-SITE_ID = 1
+SITE_ID = 2
 # TEMPLATES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#templates
@@ -102,7 +102,7 @@ EMAIL_SUBJECT_PREFIX = env(
 # ------------------------------------------------------------------------------
 # Django Admin URL regex.
 # ADMIN_URL = os.getenv("DJANGO_ADMIN_URL")
-ADMIN_URL = "^admin/"
+ADMIN_URL = "admin/"
 # Anymail
 # ------------------------------------------------------------------------------
 # https://anymail.readthedocs.io/en/stable/installation/#installing-anymail
