@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/production.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -210,7 +211,7 @@
       <workItem from="1633218721183" duration="13995000" />
       <workItem from="1633296530278" duration="5266000" />
       <workItem from="1633302373040" duration="2909000" />
-      <workItem from="1633302518553" duration="32592000" />
+      <workItem from="1633302518553" duration="38237000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -450,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633876153905</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="changed SITEID for production to 2">
+      <created>1633886826567</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1633886826567</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +479,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Investor Section working except the feeback section" />
     <MESSAGE value="Changed the logo" />
     <MESSAGE value="Fixed Sign Up Options" />
     <MESSAGE value="Driver Dashboard implementation started" />
@@ -496,7 +503,8 @@
     <MESSAGE value="configuring gunicorn" />
     <MESSAGE value="added gevent to requirements.py" />
     <MESSAGE value="changed the admin url from being updated in the getenv" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the admin url from being updated in the getenv" />
+    <MESSAGE value="changed SITEID for production to 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed SITEID for production to 2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/feron$views.coverage" NAME="views Coverage Results" MODIFIED="1631140989366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vehicle" />
