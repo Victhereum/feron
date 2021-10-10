@@ -8,22 +8,21 @@ from django.views.generic import TemplateView
 from feron.users.views import login_view
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path('login/', login_view, name='login'),
+                  path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+                  path('login/', login_view, name='login'),
                   # Django Admin, use {% url 'admin:index' %}
                   path('admin/', admin.site.urls),
-    # User management
-    # path("users/", include("feron.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
-    path('driver/', include('driver.url'), ),
-    path('investor/', include('investor.url'), ),
+                  # User management
+                  # path("users/", include("feron.users.urls", namespace="users")),
+                  path("accounts/", include("allauth.urls")),
+                  # Your stuff: custom urls includes go here
+                  path('driver/', include('driver.url'), ),
+                  path('investor/', include('investor.url'), ),
                   path('dashboard/', include('vehicle.url'), ),
                   # Third Parties
-    path('chaining/', include('smart_selects.urls')),
+                  path('chaining/', include('smart_selects.urls')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
