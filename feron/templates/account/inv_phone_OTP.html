@@ -32,10 +32,10 @@
                                 <h3>Sign In</h3>
                                 <p>Please enter the code sent to your phone via SMS</p>
                             </div>
-                            <form action="{% url 'inv-dashboard' %}" method="post">
+                            <form method="post">
                                 {% csrf_token %}
                                 <div class="form-group position-relative has-icon-left">
-                                    <label for="username">OTP Code</label>
+                                    <label for="code">OTP Code</label>
                                     <div class="position-relative">
                                         {{ form.code }}
                                         <div class="form-control-icon">

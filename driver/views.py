@@ -84,6 +84,7 @@ def activate(request, uidb64, token):
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
+        print(user)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
     # checking if the user exists, if the token is valid.
@@ -107,12 +108,18 @@ def activate(request, uidb64, token):
 # Takes the Phone No in a form, then send the OTP Code to the Driver, Finally redirect them to the OTP page
 @driver_email_verification_required
 def driver_phone(request):
+    user = User.objects.get(pk=request.user.pk)
+    # if User.objects.get(username=""):
+    #     User.objects.get(username="").delete()
+    print(user)
     if request.method == 'POST':
         form = PhoneNo(request.POST)
         if form.is_valid():
-            form.save()
+            phone = form.cleaned_data.get('phone_no')
+            user.phone_no = phone
+            user.save(update_fields=['phone_no'])
             phone_verify.send(form.cleaned_data.get('phone_no'))
-            return HttpResponseRedirect(reverse('driver:verifycode'))
+            return HttpResponseRedirect(reverse('driver:dri-verifycode'))
     else:
         form = PhoneNo()
     return render(request, 'account/dri_phone_form.html', {'form': form})
@@ -123,12 +130,14 @@ def driver_phone(request):
 def verify_code(request):
     if request.method == 'POST':
         form = OTPForm(request.POST)
+        user = User.objects.get(id=request.user.id)
+        phone_no = User.objects.filter(id=request.user.id).prefetch_related('Driver').values_list('phone_no', flat=True)
         if form.is_valid():
             code = form.cleaned_data.get('code')
-            if phone_verify.check(request.user.phone_no, code):
-                request.user.phone_no_verified = True
-                request.user.save()
-                login(request, request.user, backend='django.contrib.auth.backends.ModelBackend')
+            if phone_verify.check(phone_no, code):
+                user.phone_no_verified = True
+                user.save(update_fields=['phone_no_verified'])
+                # login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 return HttpResponseRedirect(reverse('dri-dashboard'))
     else:
         form = OTPForm()

@@ -32,7 +32,7 @@
                                 <h3>Sign In</h3>
                                 <p>Please sign in to view your dashboard.</p>
                             </div>
-                            <form action="{% url 'driver:driverphone' %}" method="post">
+                            <form action="{% url 'investorphone' %}" method="post">
                                 {% csrf_token %}
                                 <div class="form-group position-relative has-icon-left">
                                     <label for="username">Phone</label>

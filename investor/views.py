@@ -100,12 +100,15 @@ def activate(request, uidb64, token):
 # Takes the Phone No in a form, then send the OTP Code to the Investor, Finally redirect them to the OTP page
 @investor_email_verification_required
 def investor_phone(request):
+    user = User.objects.get(pk=request.user.pk)
     if request.method == 'POST':
         form = PhoneNo(request.POST)
         if form.is_valid():
-            form.save()
-            phone_verify.send(form.cleaned_data.get('phone_no'))
-            return HttpResponseRedirect(reverse('verifycode'))
+            phone = form.cleaned_data.get('phone_no')
+            user.phone_no = phone
+            user.save(update_fields=['phone_no'])
+            phone_verify.send(phone)
+            return HttpResponseRedirect(reverse('inv-verifycode'))
     else:
         form = PhoneNo()
     return render(request, 'account/inv_phone_form.html', {'form': form})
@@ -116,12 +119,14 @@ def investor_phone(request):
 def verify_code(request):
     if request.method == 'POST':
         form = OTPForm(request.POST)
+        user = User.objects.get(id=request.user.id)
+        phone_no = User.objects.filter(id=request.user.id).prefetch_related('investor').values_list('phone_no')
         if form.is_valid():
             code = form.cleaned_data.get('code')
-            if phone_verify.check(request.user.phone_no, code):
-                request.user.phone_no_verified = True
-                request.user.save()
-                login(request, request.user, backend='django.contrib.auth.backends.ModelBackend')
+            if phone_verify.check(phone_no, code):
+                user.phone_no_verified = True
+                user.save(update_fields=['phone_no_verified'])
+                # login(request, request.user, backend='django.contrib.auth.backends.ModelBackend')
                 return HttpResponseRedirect(reverse('inv-dashboard'))
     else:
         form = OTPForm()

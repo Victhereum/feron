@@ -24,5 +24,5 @@ urlpatterns = [
     path('verification_sent', views.activation_sent_view, name='activation_sent'),
     path('activate/<slug:uidb64>/<slug:token>/', views.activate, name='activate'),
     path('driverphone/', views.driver_phone, name='driverphone'),
-    path('OTP/', views.verify_code, name='verifycode'),
+    path('OTP/', views.verify_code, name='dri-verifycode'),
 ]

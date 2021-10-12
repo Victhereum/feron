@@ -92,9 +92,11 @@ class InvestorForm(forms.ModelForm):
             }
         ))
     acc_no = forms.CharField(
+        max_length=10,
         widget=forms.TextInput(
             attrs={
-                "class": "form-control"
+                "class": "form-control",
+                "maxlength": "10",
             }
         ))
     bank_name = forms.CharField(
