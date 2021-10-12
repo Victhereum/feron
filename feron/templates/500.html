@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-<body>
+{% block content %}
     <div id="error">
 
 <div class="container text-center pt-32">
@@ -12,8 +12,6 @@
             <p class="text-center">Thanks For Making This A Reality</p>
         </div>
     </div>
-
+{% endblock content %}
     {% block footer %}
     {% endblock footer %}
-</body>
-</html>

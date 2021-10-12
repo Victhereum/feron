@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/production.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/templates/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/pages/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/templates/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/500.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +212,7 @@
       <workItem from="1633296530278" duration="5266000" />
       <workItem from="1633302373040" duration="2909000" />
       <workItem from="1633302518553" duration="65602000" />
-      <workItem from="1633983675572" duration="12359000" />
+      <workItem from="1633983675572" duration="12734000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -491,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634046698003</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Enquiry form in home page fixed and ready for testing in Production environment">
+      <created>1634055755053</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1634055755053</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +515,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Driver" />
     <MESSAGE value="removed Unused file folder in .gitignore" />
     <MESSAGE value="Fixed error pages" />
     <MESSAGE value="Fixed favicon" />
@@ -537,7 +539,8 @@
     <MESSAGE value="Debugged reason for wrong redirect during signup process" />
     <MESSAGE value="Backend for on-boarding workflow now working properly" />
     <MESSAGE value="Defaulted DEBUG to False in production mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Defaulted DEBUG to False in production mode" />
+    <MESSAGE value="Enquiry form in home page fixed and ready for testing in Production environment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enquiry form in home page fixed and ready for testing in Production environment" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/feron$views.coverage" NAME="views Coverage Results" MODIFIED="1631140989366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vehicle" />
