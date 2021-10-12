@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 from driver.models import Driver
@@ -7,6 +8,7 @@ from investor.models import Investor
 from .models import InvestorVehicle, DriverVehicle, Accounting
 
 
+@login_required
 @investor_phone_verification_required
 def inv_dashboard_view(request):
     username = Investor.objects.get(user_id=request.user.id)
@@ -33,6 +35,8 @@ def inv_dashboard_view(request):
     return render(request, 'investor/inv-dashboard.html', context=dic)
 
 
+@login_required
+@investor_phone_verification_required
 def inv_accounting(request):
     username = Investor.objects.get(user_id=request.user.id)
     user_is_investor = is_investor(request.user)
@@ -51,7 +55,7 @@ def inv_accounting(request):
     return render(request, 'investor/investor-accounting.html', context=data)
 
 
-# @login_required
+@login_required
 @driver_phone_verification_required
 def dri_dashboard_view(request):
     username = Driver.objects.get(user_id=request.user.id)
@@ -74,6 +78,8 @@ def dri_dashboard_view(request):
     return render(request, 'driver/dri-dashboard.html', context=data)
 
 
+@login_required
+@driver_phone_verification_required
 def dri_accounting_view(request):
     username = Driver.objects.get(user_id=request.user.id)
     user_is_driver = is_driver(request.user)

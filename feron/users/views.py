@@ -21,17 +21,25 @@ def is_driver(user):
 
 
 def home_view(request):
-    if request.user.is_authenticated:
-        return HttpResponseRedirect('dashboard')
-    enq = forms.EnquiryForm()
+    enquiry_email = 'enquiry@feronauto.com'
+    if request.user.is_authenticated and is_investor(request.user):
+        return HttpResponseRedirect('inv-dashboard')
+    elif request.user.is_authenticated and is_driver(request.user):
+        return HttpResponseRedirect('dri-dashboard')
+    else:
+        enq = forms.EnquiryForm()
     if request.method == 'POST':
-        sub = forms.EnquiryForm(request.POST)
-        if sub.is_valid():
-            name = sub.cleaned_data['Name']
-            email = sub.cleaned_data['Email']
-            phone_no = sub.cleaned_data['Phone']
-            send_mail(str(name) + ' || ' + str(email), str(phone_no), settings.EMAIL_HOST_USER,
-                      settings.EMAIL_RECEIVING_USER, fail_silently=False)
+        enquiry = forms.EnquiryForm(request.POST)
+        if enquiry.is_valid():
+            name = enquiry.cleaned_data['name']
+            email = enquiry.cleaned_data['email']
+            phone_no = enquiry.cleaned_data['phone_no']
+            send_mail(subject='New Enquiry About Feron', message=f'There is a new enquiry about Feron Auto '
+                                                                 f'The message was sent by {name}\n '
+                                                                 f'With Email {email} \n'
+                                                                 f'and Phone No: {phone_no} \n'
+                                                                 f'Do well to contact as soon as possible',
+                      from_email=None, recipient_list=[enquiry_email], auth_user=None, auth_password=None, fail_silently=False)
             return render(request, 'pages/home.html')
     return render(request, 'pages/home.html', {'form': enq})
 

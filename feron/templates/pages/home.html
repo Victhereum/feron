@@ -543,7 +543,11 @@
                 <div class="col-lg-12">
                     <div class="text-container">
                         <h2>Our Passion</h2>
-                        <p class="p-large">We are investors ourselves with foundation in the tech eco system, owning several transport vehicles and having to manage them all traditionally. We taught outside the box by using our tech skills to create Feron Auto &reg;  in order to automate this time consuming and frustrating task. Feron's goal is to provide a million jobs and reduce unemployment drastically.</p>
+                        <p class="p-large">We are investors ourselves with foundation in the tech eco system, owning
+                            several transport vehicles and having to manage them all traditionally. We taught outside
+                            the box by using our tech skills to create Feron Auto &reg;
+                            in order to automate this time consuming and frustrating task. Feron's
+                            goal is to provide a million jobs and reduce unemployment drastically.</p>
                         <a class="btn-solid-lg" href=" {% url 'home' %} ">Join Us</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -581,15 +585,16 @@
                 <div class="col-lg-6">
 
                     <!-- Contact Form -->
-                    <form>
+                    <form method="post">
+                        {% csrf_token %}
                         <div class="form-group">
-                            <input type="text" class="form-control-input" placeholder="Name" required>
+                            {{form.name}}
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control-input" placeholder="Email" required>
+                            {{form.email}}
                         </div>
                         <div class="form-group">
-                            <input type="phone" class="form-control-input" placeholder="Phone NO" required>
+                            {{form.phone_no}}
                         </div>
                         <div class="form-group">
                             <button type="submit" class="form-control-submit-button">Submit</button>
