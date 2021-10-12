@@ -34,10 +34,10 @@ def home_view(request):
             name = enquiry.cleaned_data['name']
             email = enquiry.cleaned_data['email']
             phone_no = enquiry.cleaned_data['phone_no']
-            send_mail(subject='New Enquiry About Feron', message=f'There is a new enquiry about Feron Auto '
-                                                                 f'The message was sent by {name}\n '
-                                                                 f'With Email {email} \n'
-                                                                 f'and Phone No: {phone_no} \n'
+            send_mail(subject='New Enquiry About Feron', message=f'There is a new enquiry about Feron Auto \n\n'
+                                                                 f'The message was sent by {name.capitalize()}\n\n'
+                                                                 f'With Email "{email}" \n\n'
+                                                                 f'and Phone No: {phone_no} \n\n'
                                                                  f'Do well to contact as soon as possible',
                       from_email=None, recipient_list=[enquiry_email], auth_user=None, auth_password=None, fail_silently=False)
             return render(request, 'pages/home.html')
