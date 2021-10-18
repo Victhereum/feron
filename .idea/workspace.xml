@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
+    <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="fixef navbar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/templates/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/pages/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/templates/partials/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/feron/templates/partials/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feron/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +103,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/feron/templates/account" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -212,7 +213,9 @@
       <workItem from="1633296530278" duration="5266000" />
       <workItem from="1633302373040" duration="2909000" />
       <workItem from="1633302518553" duration="65602000" />
-      <workItem from="1633983675572" duration="19393000" />
+      <workItem from="1633983675572" duration="27884000" />
+      <workItem from="1634428865337" duration="543000" />
+      <workItem from="1634512321628" duration="5099000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -529,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634062109201</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="fixef navbar">
+      <created>1634066371838</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1634066371839</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Users who are investor can now be automatically addressed to the Drivers Table" />
     <MESSAGE value="Users who are investor can now be automatically addressed to the Investor's Table" />
     <MESSAGE value="investors can now login using their email" />
     <MESSAGE value="Debugged Email verification service for each user" />
@@ -575,7 +584,8 @@
     <MESSAGE value="Added a ❤ in error pages and home page" />
     <MESSAGE value="Fixed facebook link" />
     <MESSAGE value="Fixed error pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed error pages" />
+    <MESSAGE value="fixef navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixef navbar" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/feron$views.coverage" NAME="views Coverage Results" MODIFIED="1631140989366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vehicle" />

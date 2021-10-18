@@ -69,7 +69,8 @@ class VehicleInfo(models.Model):
     inspection_description = models.TextField(max_length=500, blank=False)
     value_at_acquisition = models.IntegerField()
     interest_amount = models.IntegerField()
-    date_created = models.DateField(auto_now=True)
+    date_created = models.DateField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=50, choices=VEHICLE_STATUS)
     weekly_returns = models.IntegerField()
     paid_so_far = models.PositiveIntegerField(blank=True, null=True)
@@ -79,6 +80,7 @@ class VehicleInfo(models.Model):
     hire_ending = models.DateField(blank=True, null=True)
     route = models.ForeignKey(VehicleRoute, on_delete=models.CASCADE, null=True)
     is_insured = models.BooleanField(default=False)
+
 
     def __str__(self):
         return self.plate_no
