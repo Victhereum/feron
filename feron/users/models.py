@@ -1,10 +1,8 @@
 # from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from queue import PriorityQueue
-from  datetime import datetime
 
-q = PriorityQueue()
+
 
 class User(AbstractUser):
     email_verified = models.BooleanField(default=False)

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="fixef navbar">
+    <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="Rever">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feron/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
