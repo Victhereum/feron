@@ -17,7 +17,7 @@ class UserAdmin(UserAdmin):
                     "is_superuser",
                     "groups",
                     "user_permissions",
-                    "phone_no_vefified",
+                    "phone_no_verified",
                     "email_verified",
                 ),
             },
