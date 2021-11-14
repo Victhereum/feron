@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="Imported datetime for the enquiry class">
+    <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pre-commit-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.pre-commit-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/local.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feron/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/feron/users/admin.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +217,7 @@
       <workItem from="1636765264101" duration="432000" />
       <workItem from="1636765745240" duration="592000" />
       <workItem from="1636766858351" duration="2930000" />
-      <workItem from="1636913970427" duration="2890000" />
+      <workItem from="1636913970427" duration="4463000" />
     </task>
     <task id="LOCAL-00001" summary="Signup, Login and Dhashboard views are working, however not perfect">
       <created>1631057128669</created>
@@ -559,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636475097906</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Edited the README file to better explain how to configure the project for testing">
+      <created>1636917270041</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1636917270041</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Debugged Email verification service for each user" />
     <MESSAGE value="Phone verification for Drivers working properly" />
     <MESSAGE value="Phone verification for Investor working properly" />
     <MESSAGE value="no changes yet" />
@@ -605,7 +607,8 @@
     <MESSAGE value="fixef navbar" />
     <MESSAGE value="Reverted previous changes made to model" />
     <MESSAGE value="Imported datetime for the enquiry class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Imported datetime for the enquiry class" />
+    <MESSAGE value="Edited the README file to better explain how to configure the project for testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited the README file to better explain how to configure the project for testing" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/feron$views.coverage" NAME="views Coverage Results" MODIFIED="1631140989366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vehicle" />

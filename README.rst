@@ -130,7 +130,7 @@ run: ::
 * Before creating any change, go to Github projects_  and pick a card, **assign the ticket to yourself** and move it to the **In progress** column then create a new branch in the format below
     .. _projects: https://github.com/Feron-Auto/feron/projects/1
 
-    * Feron-<ticket-no>/short-description-without-space
+    * Feron-<issue-no>/short-description-without-space
 
     * e.g. Feron-10/Investor-Main-Dashboard
 
