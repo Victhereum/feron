@@ -66,7 +66,7 @@ Moved to `Live reloading and SASS compilation`_.
 Setup
 ^^^^^
 
-* On project initialisation, clone the repository using
+* On project initialisation, clone the repository using ::
 
     git clone https://github.com/Feron-Auto/feron.git
 
@@ -191,7 +191,7 @@ you can also provide an optional amount of models to generate by passing the `-a
 
 Viewing the list of available urls from the terminal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- ::
+::
 
     python manage.py list_urls
 

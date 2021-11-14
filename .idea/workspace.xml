@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6b2f4bea-f1e9-4cad-9183-315a9f996f32" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -218,14 +218,7 @@
       <workItem from="1636765264101" duration="432000" />
       <workItem from="1636765745240" duration="592000" />
       <workItem from="1636766858351" duration="2930000" />
-      <workItem from="1636913970427" duration="6484000" />
-    </task>
-    <task id="LOCAL-00002" summary="Signup, Login and Dhashboard views are working, however not perfect2">
-      <created>1631057936565</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1631057936565</updated>
+      <workItem from="1636913970427" duration="7166000" />
     </task>
     <task id="LOCAL-00003" summary="Investor can signup, sign in and view their dashboard, but the values are yet to be displayed">
       <created>1631219538832</created>
@@ -563,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636918899827</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Edited the README file to better explain how to configure the project for testing">
+      <created>1636923208992</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1636923208993</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
