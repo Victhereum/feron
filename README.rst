@@ -29,7 +29,14 @@ Setting Up Your Users
 
     python manage.py createsuperuser
 
+* To create a dummy user from the admin
+    1. Sign into the superuser account
+    2. Go to the user table and create a user **Note:** *Make sure to check mark Email verified and Phone_no_verified then move INVESTOR from available groups to chosen groups
+    3. Head to the investor table and select the new user, fill the form and save
+    4. You can now use the email and password to login
+
 For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
+
 
 Type checks
 ^^^^^^^^^^^
