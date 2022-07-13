@@ -285,5 +285,8 @@ db.sqlite3-journal
 migrations
 .vscode
 
-.FeronFilesNotUsed/
-.FeronFliesNotUsed/*
+FeronFilesNotUsed/
+FeronFliesNotUsed/*
+
+env
+.env
