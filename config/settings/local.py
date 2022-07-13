@@ -10,7 +10,7 @@ DEBUG = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1",'feronauto.herokuapp.com', '*']
 
 # CACHES
 # ------------------------------------------------------------------------------
